@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Part 2 Extension (Slide A1-A8)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 테마 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #050505;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.2);
+            background: radial-gradient(circle at 50% 120%, #1e1b4b, #020617);
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        /* 유틸리티 */
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 배경 별빛 효과 */
+        .stars {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(1px 1px at 20px 30px, #fff, transparent), radial-gradient(2px 2px at 100px 50px, #fff, transparent);
+            background-size: 300px 300px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* 네비게이션 */
+        .nav-btn {
+            position: fixed;
+            bottom: 30px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        .prev-btn {
+            right: 100px;
+        }
+
+        .next-btn {
+            right: 30px;
+        }
+
+        /* 테이블 스타일 */
+        .vrio-table th,
+        .vrio-table td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .vrio-table th {
+            background: rgba(255, 255, 255, 0.05);
+            color: #93c5fd;
+        }
+
+        .vrio-table td:first-child {
+            text-align: left;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <div class="stars"></div>
+
+        <!-- ==================== A1: Porter's 5 Forces ==================== -->
+        <div class="slide active" id="slide1">
+            <div class="p-12 h-full flex flex-col">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <p class="text-blue-400 font-serif italic mb-1">Industry Analysis</p>
+                        <h2 class="text-4xl font-bold text-white">Porter's 5 Forces (2025)</h2>
+                    </div>
+                    <div class="text-5xl font-oswald text-white/10">A1</div>
+                </div>
+
+                <div class="grid grid-cols-3 grid-rows-3 gap-4 h-full relative">
+                    <!-- Center: Disney -->
+                    <div
+                        class="col-start-2 row-start-2 glass rounded-xl flex items-center justify-center border border-blue-500 shadow-[0_0_30px_rgba(59,130,246,0.3)] z-10">
+                        <div class="text-center">
+                            <i class="fa-brands fa-fort-awesome text-4xl text-blue-400 mb-2"></i>
+                            <h3 class="text-2xl font-bold text-white">DISNEY</h3>
+                        </div>
+                    </div>
+
+                    <!-- Top: Rivalry (High) -->
+                    <div
+                        class="col-start-2 row-start-1 glass p-4 rounded-xl border-t-4 border-red-500 flex flex-col justify-center text-center">
+                        <h4 class="text-red-400 font-bold mb-1"><i class="fa-solid fa-fire mr-2"></i>산업 내 경쟁 (High)</h4>
+                        <p class="text-xs text-gray-300">Universal Epic Universe (2025)</p>
+                        <p class="text-xs text-gray-300">Netflix (2.8억 구독자)</p>
+                    </div>
+
+                    <!-- Bottom: Suppliers (High) -->
+                    <div
+                        class="col-start-1 row-start-3 glass p-4 rounded-xl border-l-4 border-red-500 flex flex-col justify-center">
+                        <h4 class="text-red-400 font-bold mb-1">공급자 교섭력 (High)</h4>
+                        <p class="text-xs text-gray-300">• 할리우드 길드 파업</p>
+                        <p class="text-xs text-gray-300">• AI 도입 갈등</p>
+                    </div>
+
+                    <!-- Bottom: Buyers (High) -->
+                    <div
+                        class="col-start-3 row-start-3 glass p-4 rounded-xl border-r-4 border-red-500 flex flex-col justify-center text-right">
+                        <h4 class="text-red-400 font-bold mb-1">구매자 교섭력 (High)</h4>
+                        <p class="text-xs text-gray-300">이탈률(Churn) 증가 •</p>
+                        <p class="text-xs text-gray-300">가격 저항 심화 •</p>
+                    </div>
+
+                    <!-- Left: New Entrants (Low) -->
+                    <div
+                        class="col-start-1 row-start-2 glass p-4 rounded-xl border-l-4 border-green-500 flex flex-col justify-center">
+                        <h4 class="text-green-400 font-bold mb-1">신규 진입 (Low)</h4>
+                        <p class="text-xs text-gray-300">• 테마파크 장벽 ($70B+)</p>
+                        <p class="text-xs text-gray-300">• IP 역사 복제 불가</p>
+                    </div>
+
+                    <!-- Right: Substitutes (Very High) -->
+                    <div
+                        class="col-start-3 row-start-2 glass p-4 rounded-xl border-r-4 border-red-600 flex flex-col justify-center text-right">
+                        <h4 class="text-red-600 font-bold mb-1"><i class="fa-solid fa-triangle-exclamation mr-2"></i>대체재
+                            (Critical)</h4>
+                        <p class="text-xs text-gray-300">Short-form (TikTok) •</p>
+                        <p class="text-xs text-gray-300">Gaming (Fortnite) •</p>
+                    </div>
+
+                    <!-- Arrows -->
+                    <div class="absolute inset-0 pointer-events-none flex items-center justify-center">
+                        <div class="w-full h-px bg-white/10 absolute"></div>
+                        <div class="h-full w-px bg-white/10 absolute"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== A2: VRIO Analysis ==================== -->
+        <div class="slide" id="slide2">
+            <div class="p-12 h-full flex flex-col">
+                <div class="flex justify-between items-end mb-6">
+                    <div>
+                        <p class="text-yellow-500 font-serif italic mb-1">Core Competency</p>
+                        <h2 class="text-4xl font-bold text-white">VRIO Framework Analysis</h2>
+                    </div>
+                    <div class="text-5xl font-oswald text-white/10">A2</div>
+                </div>
+
+                <div class="glass rounded-2xl p-6 overflow-hidden">
+                    <table class="w-full vrio-table text-sm">
+                        <thead>
+                            <tr>
+                                <th width="30%">Resource / Capability</th>
+                                <th width="10%">Value</th>
+                                <th width="10%">Rarity</th>
+                                <th width="10%">Imit.</th>
+                                <th width="10%">Org.</th>
+                                <th width="30%">Competitive Advantage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="text-lg">Super IP Portfolio</div>
+                                    <div class="text-xs text-gray-400">Marvel, Star Wars</div>
+                                </td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td class="text-yellow-400 font-bold">Sustainable (지속적)</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-lg">Theme Park Culture</div>
+                                    <div class="text-xs text-gray-400">Cast Member Service</div>
+                                </td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td><i class="fa-solid fa-triangle-exclamation text-yellow-500"></i></td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td class="text-yellow-400 font-bold">Sustainable (지속적)</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-lg">Brand Heritage</div>
+                                    <div class="text-xs text-gray-400">100 Years History</div>
+                                </td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td class="text-yellow-400 font-bold">Sustainable (지속적)</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="text-lg">Streaming Tech</div>
+                                    <div class="text-xs text-gray-400">Disney+ Platform</div>
+                                </td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td><i class="fa-solid fa-xmark text-red-500"></i></td>
+                                <td><i class="fa-solid fa-xmark text-red-500"></i></td>
+                                <td><i class="fa-solid fa-check text-green-400"></i></td>
+                                <td class="text-blue-400 font-bold">Parity (동등/일시적)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="mt-6 flex gap-4">
+                    <div class="glass flex-1 p-4 rounded-xl border-l-4 border-yellow-500">
+                        <h4 class="font-bold text-white mb-1">Key Insight</h4>
+                        <p class="text-sm text-gray-300">IP와 서비스 문화는 경쟁사가 모방 불가능한 <strong>경제적 해자(Moat)</strong> 역할.</p>
+                    </div>
+                    <div class="glass flex-1 p-4 rounded-xl border-l-4 border-blue-500">
+                        <h4 class="font-bold text-white mb-1">Strategic Priority</h4>
+                        <p class="text-sm text-gray-300">기술 역량(Tech)은 아직 넷플릭스 대비 열위. <strong>OTE 조직</strong>을 통한 보완 시급.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== A3: Universal vs Disney ==================== -->
+        <div class="slide" id="slide3">
+            <div class="h-full flex relative">
+                <!-- Split Background -->
+                <div class="absolute inset-0 flex">
+                    <div class="w-1/2 bg-blue-900/10"></div>
+                    <div class="w-1/2 bg-red-900/10"></div>
+                </div>
+
+                <div class="relative z-10 w-full p-12 flex flex-col">
+                    <h2 class="text-4xl font-bold text-center text-white mb-8">The Battle for Orlando (2025)</h2>
+
+                    <div class="flex gap-8 h-full">
+                        <!-- Disney -->
+                        <div class="flex-1 glass p-6 rounded-2xl border-t-4 border-blue-500">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold text-blue-400">DISNEY</h3>
+                                <p class="text-sm text-gray-400">Defense Strategy</p>
+                            </div>
+                            <ul class="space-y-4 text-gray-300">
+                                <li class="flex justify-between border-b border-white/10 pb-2">
+                                    <span>Strategy</span> <span class="text-white font-bold">Retention (가두기)</span>
+                                </li>
+                                <li class="flex justify-between border-b border-white/10 pb-2">
+                                    <span>Asset</span> <span class="text-white font-bold">4 Parks + Hotels</span>
+                                </li>
+                                <li class="flex justify-between border-b border-white/10 pb-2">
+                                    <span>Strength</span> <span class="text-white font-bold">Service Culture</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Weakness</span> <span class="text-red-400 font-bold">High Price / No New
+                                        Park</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- VS Chart -->
+                        <div class="w-48 flex flex-col justify-center items-center">
+                            <div class="text-2xl font-black text-white mb-4">M/S Forecast</div>
+                            <div
+                                class="w-full h-64 bg-gray-800 rounded-lg relative overflow-hidden flex flex-col-reverse">
+                                <div class="w-full bg-blue-600 flex items-center justify-center text-white font-bold transition-all duration-1000"
+                                    style="height: 60%">60%</div>
+                                <div class="w-full bg-red-600 flex items-center justify-center text-white font-bold transition-all duration-1000"
+                                    style="height: 40%">40%</div>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-2">2025 Prediction</p>
+                        </div>
+
+                        <!-- Universal -->
+                        <div class="flex-1 glass p-6 rounded-2xl border-t-4 border-red-500">
+                            <div class="text-center mb-6">
+                                <h3 class="text-2xl font-bold text-red-500">UNIVERSAL</h3>
+                                <p class="text-sm text-gray-400">Epic Universe Attack</p>
+                            </div>
+                            <ul class="space-y-4 text-gray-300">
+                                <li class="flex justify-between border-b border-white/10 pb-2">
+                                    <span>Strategy</span> <span class="text-white font-bold">Expansion (확장)</span>
+                                </li>
+                                <li class="flex justify-between border-b border-white/10 pb-2">
+                                    <span>Asset</span> <span class="text-white font-bold">$7B New Park</span>
+                                </li>
+                                <li class="flex justify-between border-b border-white/10 pb-2">
+                                    <span>Strength</span> <span class="text-white font-bold">Hardware / IP Mix</span>
+                                </li>
+                                <li class="flex justify-between">
+                                    <span>Weakness</span> <span class="text-red-400 font-bold">Service Depth</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== A4: Netflix vs Disney+ ==================== -->
+        <div class="slide" id="slide4">
+            <div class="p-12 h-full flex flex-col">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <p class="text-purple-400 font-serif italic mb-1">Streaming War Round 2</p>
+                        <h2 class="text-4xl font-bold text-white">Retention War: The Bundle</h2>
+                    </div>
+                    <div class="text-5xl font-oswald text-white/10">A4</div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-12 h-full">
+                    <!-- Comparison Table -->
+                    <div class="glass p-8 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-6">Metric Comparison</h3>
+                        <div class="space-y-6">
+                            <!-- Churn Rate -->
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span class="text-gray-400">Churn Rate (이탈률)</span>
+                                    <span class="text-green-400 font-bold">Lower is Better</span>
+                                </div>
+                                <div class="h-8 bg-gray-800 rounded-full overflow-hidden relative">
+                                    <div
+                                        class="absolute top-0 left-0 h-full bg-red-600 w-[20%] flex items-center pl-2 text-xs text-white font-bold">
+                                        Netflix 2%</div>
+                                    <div class="absolute top-0 left-0 h-full bg-blue-600 w-[48%] opacity-50"></div>
+                                    <div
+                                        class="absolute top-0 right-1/2 h-full flex items-center pr-2 text-xs text-blue-300 font-bold">
+                                        Disney+ 4.8%</div>
+                                </div>
+                            </div>
+                            <!-- Tech vs IP -->
+                            <div class="grid grid-cols-2 gap-4 mt-8">
+                                <div class="bg-red-900/20 p-4 rounded-lg border border-red-500/30">
+                                    <div class="text-red-500 font-bold mb-1">Netflix</div>
+                                    <p class="text-xs text-gray-300">Tech & Algorithm King</p>
+                                    <p class="text-xs text-gray-300">Global Local Sourcing</p>
+                                </div>
+                                <div class="bg-blue-900/20 p-4 rounded-lg border border-blue-500/30">
+                                    <div class="text-blue-400 font-bold mb-1">Disney</div>
+                                    <p class="text-xs text-gray-300">IP & Franchise King</p>
+                                    <p class="text-xs text-gray-300">Ecosystem Power</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Solution: Super Bundle -->
+                    <div class="flex flex-col justify-center">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl font-bold text-white">The Solution: Super Bundle</h3>
+                            <p class="text-sm text-gray-400">Creating a "Disney Prime" Ecosystem</p>
+                        </div>
+
+                        <div class="relative w-64 mx-auto">
+                            <!-- Stacked Boxes Animation -->
+                            <div
+                                class="glass h-20 w-64 rounded-xl flex items-center justify-center border border-blue-500 bg-blue-900/40 absolute top-0 z-30 transform translate-y-0">
+                                <span class="text-white font-bold">Disney+ (Family)</span>
+                            </div>
+                            <div
+                                class="glass h-20 w-64 rounded-xl flex items-center justify-center border border-green-500 bg-green-900/40 absolute top-4 z-20 transform translate-y-12 scale-95">
+                                <span class="text-white font-bold">Hulu (Drama)</span>
+                            </div>
+                            <div
+                                class="glass h-20 w-64 rounded-xl flex items-center justify-center border border-red-500 bg-red-900/40 absolute top-8 z-10 transform translate-y-24 scale-90">
+                                <span class="text-white font-bold">ESPN+ (Sports)</span>
+                            </div>
+                        </div>
+
+                        <div class="mt-32 text-center">
+                            <p
+                                class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                                Retention 80%
+                            </p>
+                            <p class="text-xs text-gray-400">Bundle 3-Month Retention Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== A5: Strategic Paradoxes ==================== -->
+        <div class="slide" id="slide5">
+            <div class="p-12 h-full flex flex-col">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-bold text-white">Strategic Paradoxes</h2>
+                    <p class="text-gray-400">Managing Conflicting Goals</p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6 h-full pb-8">
+                    <!-- Paradox 1 -->
+                    <div
+                        class="glass p-6 rounded-2xl border-t-4 border-yellow-500 flex flex-col items-center text-center group hover:bg-white/5 transition">
+                        <div
+                            class="w-16 h-16 rounded-full bg-yellow-500/20 flex items-center justify-center text-2xl text-yellow-500 mb-4">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Heritage vs Innovation</h3>
+                        <p class="text-sm text-gray-400 mb-4">"영혼 없는 기술인가,<br>마법의 진화인가?"</p>
+                        <div class="mt-auto p-3 bg-black/30 rounded-lg w-full">
+                            <span class="text-green-400 font-bold text-xs block mb-1">SOLUTION</span>
+                            <p class="text-xs text-white">AI Enablement<br>(기술로 전통 증강)</p>
+                        </div>
+                    </div>
+
+                    <!-- Paradox 2 -->
+                    <div
+                        class="glass p-6 rounded-2xl border-t-4 border-green-500 flex flex-col items-center text-center group hover:bg-white/5 transition">
+                        <div
+                            class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center text-2xl text-green-500 mb-4">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Profit vs Access</h3>
+                        <p class="text-sm text-gray-400 mb-4">"주주 이익인가,<br>대중의 꿈인가?"</p>
+                        <div class="mt-auto p-3 bg-black/30 rounded-lg w-full">
+                            <span class="text-green-400 font-bold text-xs block mb-1">SOLUTION</span>
+                            <p class="text-xs text-white">Dynamic Pricing<br>(가격 차별화)</p>
+                        </div>
+                    </div>
+
+                    <!-- Paradox 3 -->
+                    <div
+                        class="glass p-6 rounded-2xl border-t-4 border-blue-500 flex flex-col items-center text-center group hover:bg-white/5 transition">
+                        <div
+                            class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center text-2xl text-blue-500 mb-4">
+                            <i class="fa-solid fa-globe"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Global vs Local</h3>
+                        <p class="text-sm text-gray-400 mb-4">"디즈니화인가,<br>현지화인가?"</p>
+                        <div class="mt-auto p-3 bg-black/30 rounded-lg w-full">
+                            <span class="text-green-400 font-bold text-xs block mb-1">SOLUTION</span>
+                            <p class="text-xs text-white">Selective Glocal<br>(상하이 모델)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== A6: 2025 Trends ==================== -->
+        <div class="slide" id="slide6">
+            <div class="p-12 h-full flex flex-col">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <p class="text-green-400 font-serif italic mb-1">Bob Iger's Return</p>
+                        <h2 class="text-4xl font-bold text-white">2025 Key Trends</h2>
+                    </div>
+                    <div class="text-5xl font-oswald text-white/10">A6</div>
+                </div>
+
+                <div class="flex gap-8 h-full">
+                    <!-- Before/After -->
+                    <div class="w-1/3 flex flex-col gap-4">
+                        <div class="glass p-6 rounded-xl border-l-4 border-gray-500 opacity-60">
+                            <h3 class="text-gray-400 font-bold text-lg mb-2">Before (Chapek)</h3>
+                            <ul class="text-sm text-gray-500 space-y-1">
+                                <li>• 양적 확장 (Volume)</li>
+                                <li>• 구독자 수 집착</li>
+                                <li>• 조직 분산</li>
+                            </ul>
+                        </div>
+                        <div class="text-center text-2xl text-yellow-500"><i class="fa-solid fa-arrow-down"></i></div>
+                        <div class="glass p-6 rounded-xl border-l-4 border-yellow-500 bg-yellow-900/10">
+                            <h3 class="text-yellow-500 font-bold text-lg mb-2">After (Iger)</h3>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>• <strong>질적 성장 (Value)</strong></li>
+                                <li>• 수익성 우선 (Profit)</li>
+                                <li>• 선택과 집중</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 5 Key Changes List -->
+                    <div class="w-2/3 glass p-8 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-6">5 Major Strategic Shifts</h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-8 h-8 rounded bg-red-500 flex items-center justify-center text-white font-bold">
+                                    1</div>
+                                <div>
+                                    <h4 class="text-white font-bold">Cost Innovation</h4>
+                                    <p class="text-sm text-gray-400">$5.5B 절감, 7000명 감축 → 스트리밍 흑자 전환</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-8 h-8 rounded bg-blue-500 flex items-center justify-center text-white font-bold">
+                                    2</div>
+                                <div>
+                                    <h4 class="text-white font-bold">Content Quality</h4>
+                                    <p class="text-sm text-gray-400">Marvel 리부트, 양보다 질, 극장 우선 회귀</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-8 h-8 rounded bg-purple-500 flex items-center justify-center text-white font-bold">
+                                    3</div>
+                                <div>
+                                    <h4 class="text-white font-bold">Tech Enablement (OTE)</h4>
+                                    <p class="text-sm text-gray-400">AI/XR 전담 조직 신설, 테크 기업으로의 전환</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <div
+                                    class="w-8 h-8 rounded bg-green-500 flex items-center justify-center text-white font-bold">
+                                    4</div>
+                                <div>
+                                    <h4 class="text-white font-bold">Future Investment</h4>
+                                    <p class="text-sm text-gray-400">테마파크 $60B 투자, Epic Games $1.5B 지분 확보</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== A7: Strategy 2026 (1/2) ==================== -->
+        <div class="slide" id="slide7">
+            <div class="p-12 h-full flex flex-col">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <p class="text-blue-400 font-serif italic mb-1">Future Strategy</p>
+                        <h2 class="text-4xl font-bold text-white">2026 Strategic Roadmap (1)</h2>
+                    </div>
+                    <div class="text-5xl font-oswald text-white/10">A7</div>
+                </div>
+
+                <div class="grid grid-rows-2 gap-6 h-full pb-4">
+                    <!-- Defense: Software -->
+                    <div class="glass p-8 rounded-2xl border-l-8 border-blue-500 flex relative overflow-hidden group">
+                        <div
+                            class="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-blue-900/30 to-transparent">
+                        </div>
+                        <div class="w-2/3 z-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fa-solid fa-shield-halved text-3xl text-blue-500"></i>
+                                <h3 class="text-2xl font-bold text-white">DEFENSE: Software Experience</h3>
+                            </div>
+                            <p class="text-blue-200 mb-4">Target: Countering Universal's Hardware</p>
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• <strong>Frictionless Experience:</strong> 지니+ 개편, AI 동선 최적화</li>
+                                <li>• <strong>Human Touch:</strong> 캐스트 멤버 권한 강화, 'Moment of Magic'</li>
+                                <li>• "하드웨어는 유니버설, 소프트웨어(감동)는 디즈니"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Attack: Ecosystem -->
+                    <div class="glass p-8 rounded-2xl border-l-8 border-red-500 flex relative overflow-hidden group">
+                        <div
+                            class="absolute right-0 top-0 bottom-0 w-1/3 bg-gradient-to-l from-red-900/30 to-transparent">
+                        </div>
+                        <div class="w-2/3 z-10">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fa-solid fa-rocket text-3xl text-red-500"></i>
+                                <h3 class="text-2xl font-bold text-white">ATTACK: Disney Prime</h3>
+                            </div>
+                            <p class="text-red-200 mb-4">Target: Ecosystem Lock-in (vs Netflix)</p>
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li>• <strong>Super Bundle:</strong> Streaming + Park + Merch 통합 멤버십</li>
+                                <li>• <strong>Benefit:</strong> 조기 입장, 독점 콘텐츠, 할인 (월 $20 수준)</li>
+                                <li>• 넷플릭스가 절대 따라할 수 없는 온-오프라인 결합</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== A8: Strategy 2026 (2/2) ==================== -->
+        <div class="slide" id="slide8">
+            <div class="p-12 h-full flex flex-col">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <p class="text-blue-400 font-serif italic mb-1">Future Strategy</p>
+                        <h2 class="text-4xl font-bold text-white">2026 Strategic Roadmap (2)</h2>
+                    </div>
+                    <div class="text-5xl font-oswald text-white/10">A8</div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6 h-1/2 mb-6">
+                    <!-- Innovation: AI -->
+                    <div class="glass p-6 rounded-2xl border-t-4 border-purple-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-microchip text-2xl text-purple-500"></i>
+                            <h3 class="text-xl font-bold text-white">INNOVATION: AI Enablement</h3>
+                        </div>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• 제작비 30% 절감 (배경, 군중, 번역)</li>
+                            <li>• <strong>UGC Platform:</strong> 팬들이 만드는 2차 창작 허브</li>
+                            <li>• Z세대 시간 점유율 회복 (vs TikTok)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Brand: Pricing -->
+                    <div class="glass p-6 rounded-2xl border-t-4 border-green-500">
+                        <div class="flex items-center gap-3 mb-3">
+                            <i class="fa-solid fa-users text-2xl text-green-500"></i>
+                            <h3 class="text-xl font-bold text-white">BRAND: Mid-Class Recovery</h3>
+                        </div>
+                        <ul class="text-sm text-gray-300 space-y-2">
+                            <li>• <strong>2-Track Pricing:</strong> 프리미엄 vs 접근성 분리</li>
+                            <li>• 비수기 파격 할인 & 지역 주민 특가</li>
+                            <li>• "미래 고객(어린이)을 잃지 않는 가격 정책"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Final Message -->
+                <div
+                    class="h-1/3 glass p-6 rounded-2xl bg-gradient-to-r from-blue-900/40 to-purple-900/40 flex flex-col items-center justify-center text-center border border-white/20">
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">"The Great Integration"</h3>
+                    <p class="text-gray-300 text-sm max-w-2xl">
+                        2026년 디즈니의 승부수는 <strong>'통합(Integration)'</strong>입니다.<br>
+                        물리와 디지털, 전통과 기술, 수익성과 접근성을 융합하여<br>
+                        누구도 넘볼 수 없는 <strong>완전한 생태계(Total Ecosystem)</strong>를 완성할 것입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 컨트롤러 -->
+    <button class="nav-btn prev-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="nav-btn next-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 8;
+
+        function showSlide(n) {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+            if (n > totalSlides) currentSlide = 1;
+            else if (n < 1) currentSlide = totalSlides;
+            else currentSlide = n;
+            document.getElementById('slide' + currentSlide).classList.add('active');
+        }
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight') nextSlide();
+            if (event.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>

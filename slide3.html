@@ -1,0 +1,425 @@
+```html
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Bright Presentation (Slide 5-6)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,600;1,600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 기본 설정 (밝은 테마) */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            background: white;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            background: white;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        /* 폰트 유틸리티 */
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* 디자인 요소 */
+        .soft-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(30, 64, 175, 0.1);
+        }
+
+        /* 이미지 플레이스홀더 */
+        .img-placeholder {
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #94a3b8;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-placeholder:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+            background-color: #eff6ff;
+        }
+
+        /* 네비게이션 */
+        .nav-btn {
+            position: fixed;
+            bottom: 30px;
+            z-index: 100;
+            background: white;
+            color: #1e293b;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            font-weight: bold;
+            border: 1px solid #e2e8f0;
+        }
+
+        .nav-btn:hover {
+            background: #f8fafc;
+            transform: translateY(-2px);
+        }
+
+        .prev-btn {
+            right: 120px;
+        }
+
+        .next-btn {
+            right: 30px;
+        }
+
+        /* 차트 바 스타일 */
+        .chart-bg {
+            background-color: #f1f5f9;
+            border-radius: 99px;
+            height: 10px;
+            overflow: hidden;
+        }
+
+        .chart-fill {
+            height: 100%;
+            border-radius: 99px;
+            transition: width 1s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide-container">
+
+        <!-- ==================== SLIDE 5: Global Expansion (Bright) ==================== -->
+        <div class="slide active" id="slide5">
+            <div class="h-full flex flex-col p-16">
+                <!-- Header -->
+                <div class="flex justify-between items-end mb-10 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-blue-600 font-bold uppercase tracking-widest text-sm">Global Network</span>
+                        <h2 class="text-5xl font-bold text-slate-900 font-serif mt-2">Expansion & Reach</h2>
+                    </div>
+                    <div class="text-slate-300 text-6xl font-serif font-bold opacity-50">05</div>
+                </div>
+
+                <div class="flex gap-10 h-full">
+                    <!-- Left: Offline (Theme Parks) -->
+                    <div class="w-2/3 flex flex-col">
+                        <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                            <i class="fa-solid fa-map-location-dot text-blue-500 mr-3"></i>
+                            World Wide Theme Parks
+                        </h3>
+
+                        <!-- Map Placeholder -->
+                        <div class="img-placeholder w-full h-48 rounded-2xl mb-6 bg-slate-50 border-none relative">
+                            <i class="fa-solid fa-earth-americas text-6xl text-slate-200"></i>
+                            <span class="absolute mt-20 text-sm font-bold text-slate-400">세계 지도 이미지 삽입 영역</span>
+                        </div>
+
+                        <!-- Parks Grid -->
+                        <div class="grid grid-cols-3 gap-4">
+                            <!-- Card 1 -->
+                            <div
+                                class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm hover:border-blue-300 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-2xl">🇺🇸</span>
+                                    <span class="text-xs font-bold text-slate-400">1955</span>
+                                </div>
+                                <div class="font-bold text-slate-800 text-sm">Disneyland</div>
+                                <div class="text-xs text-slate-500">California</div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div
+                                class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm hover:border-blue-300 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-2xl">🇺🇸</span>
+                                    <span class="text-xs font-bold text-slate-400">1971</span>
+                                </div>
+                                <div class="font-bold text-slate-800 text-sm">Disney World</div>
+                                <div class="text-xs text-slate-500">Florida</div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div
+                                class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm hover:border-blue-300 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-2xl">🇯🇵</span>
+                                    <span class="text-xs font-bold text-slate-400">1983</span>
+                                </div>
+                                <div class="font-bold text-slate-800 text-sm">Tokyo Disney</div>
+                                <div class="text-xs text-slate-500">Japan</div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div
+                                class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm hover:border-blue-300 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-2xl">🇫🇷</span>
+                                    <span class="text-xs font-bold text-slate-400">1992</span>
+                                </div>
+                                <div class="font-bold text-slate-800 text-sm">Disneyland Paris</div>
+                                <div class="text-xs text-slate-500">France</div>
+                            </div>
+                            <!-- Card 5 -->
+                            <div
+                                class="bg-white border border-slate-100 p-4 rounded-xl shadow-sm hover:border-blue-300 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-2xl">🇭🇰</span>
+                                    <span class="text-xs font-bold text-slate-400">2005</span>
+                                </div>
+                                <div class="font-bold text-slate-800 text-sm">Hong Kong</div>
+                                <div class="text-xs text-slate-500">China</div>
+                            </div>
+                            <!-- Card 6 -->
+                            <div
+                                class="bg-blue-50 border border-blue-200 p-4 rounded-xl shadow-sm hover:border-blue-400 transition">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-2xl">🇨🇳</span>
+                                    <span class="text-xs font-bold text-blue-600">2016</span>
+                                </div>
+                                <div class="font-bold text-blue-900 text-sm">Shanghai</div>
+                                <div class="text-xs text-blue-600">China (Largest Invest)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Digital (Disney+) -->
+                    <div class="w-1/3 flex flex-col">
+                        <div
+                            class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-3xl p-8 text-white h-full shadow-xl relative overflow-hidden flex flex-col justify-between">
+                            <!-- Background Icon -->
+                            <i class="fa-solid fa-play absolute -right-4 -top-4 text-9xl text-white opacity-10"></i>
+
+                            <div>
+                                <div
+                                    class="bg-white/20 w-fit px-3 py-1 rounded-full text-xs font-bold mb-4 backdrop-blur-sm">
+                                    Digital Shift</div>
+                                <h3 class="text-3xl font-bold mb-1">Disney+</h3>
+                                <p class="text-blue-100 text-sm">Streaming Revolution</p>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div>
+                                    <div class="text-5xl font-black mb-1">1.5억<span class="text-2xl font-light">+</span>
+                                    </div>
+                                    <div class="text-sm text-blue-200">Global Subscribers</div>
+                                </div>
+                                <div>
+                                    <div class="text-4xl font-bold mb-1">160<span class="text-xl font-light">개국</span>
+                                    </div>
+                                    <div class="text-sm text-blue-200">Service Area</div>
+                                </div>
+                            </div>
+
+                            <div class="bg-black/20 rounded-xl p-4 backdrop-blur-sm mt-4">
+                                <p class="text-xs leading-relaxed opacity-90">
+                                    "물리적 공간의 제약을 넘어, 언제 어디서나 디즈니를 경험하게 하다."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 6: Key Metrics (Bright) ==================== -->
+        <div class="slide" id="slide6">
+            <div class="h-full flex flex-col p-16">
+                <!-- Header -->
+                <div class="flex justify-between items-end mb-10 border-b border-slate-100 pb-4">
+                    <div>
+                        <span class="text-green-600 font-bold uppercase tracking-widest text-sm">Financial
+                            Performance</span>
+                        <h2 class="text-5xl font-bold text-slate-900 font-serif mt-2">Key Metrics 2023</h2>
+                    </div>
+                    <div class="text-slate-300 text-6xl font-serif font-bold opacity-50">06</div>
+                </div>
+
+                <div class="grid grid-cols-12 gap-10 h-full">
+
+                    <!-- Left: Data & Charts (Span 7) -->
+                    <div class="col-span-7 flex flex-col gap-6">
+                        <!-- Top KPI Cards -->
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-slate-400 text-xs font-bold uppercase mb-2">Annual Revenue</p>
+                                <div class="flex items-end gap-2">
+                                    <span class="text-4xl font-black text-slate-800">$88.9 B</span>
+                                    <span class="text-green-500 text-sm font-bold mb-1"><i
+                                            class="fa-solid fa-arrow-up"></i> 7%</span>
+                                </div>
+                            </div>
+                            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                                <p class="text-slate-400 text-xs font-bold uppercase mb-2">Market Cap</p>
+                                <div class="flex items-end gap-2">
+                                    <span class="text-4xl font-black text-slate-800">$201 B+</span>
+                                    <span class="text-blue-500 text-sm font-bold mb-1">Top Tier</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chart -->
+                        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex-1">
+                            <h3 class="text-lg font-bold text-slate-700 mb-6">Revenue Trend (5 Years)</h3>
+
+                            <div class="space-y-5">
+                                <!-- 2019 -->
+                                <div class="flex items-center text-sm">
+                                    <span class="w-12 text-slate-400 font-medium">2019</span>
+                                    <div class="flex-1 mx-4 chart-bg">
+                                        <div class="chart-fill bg-slate-300" style="width: 78%"></div>
+                                    </div>
+                                    <span class="w-16 text-right font-bold text-slate-600">$69.6B</span>
+                                </div>
+                                <!-- 2020 -->
+                                <div class="flex items-center text-sm">
+                                    <span class="w-12 text-slate-400 font-medium">2020</span>
+                                    <div class="flex-1 mx-4 chart-bg">
+                                        <div class="chart-fill bg-red-400" style="width: 73%"></div>
+                                    </div>
+                                    <span class="w-16 text-right font-bold text-red-500">$65.4B</span>
+                                </div>
+                                <!-- 2021 -->
+                                <div class="flex items-center text-sm">
+                                    <span class="w-12 text-slate-400 font-medium">2021</span>
+                                    <div class="flex-1 mx-4 chart-bg">
+                                        <div class="chart-fill bg-slate-300" style="width: 75%"></div>
+                                    </div>
+                                    <span class="w-16 text-right font-bold text-slate-600">$67.4B</span>
+                                </div>
+                                <!-- 2022 -->
+                                <div class="flex items-center text-sm">
+                                    <span class="w-12 text-slate-400 font-medium">2022</span>
+                                    <div class="flex-1 mx-4 chart-bg">
+                                        <div class="chart-fill bg-blue-400" style="width: 92%"></div>
+                                    </div>
+                                    <span class="w-16 text-right font-bold text-slate-600">$82.7B</span>
+                                </div>
+                                <!-- 2023 -->
+                                <div class="flex items-center text-sm">
+                                    <span class="w-12 text-blue-600 font-bold">2023</span>
+                                    <div class="flex-1 mx-4 chart-bg">
+                                        <div class="chart-fill bg-blue-600" style="width: 100%"></div>
+                                    </div>
+                                    <span class="w-16 text-right font-bold text-blue-700">$88.9B</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Image & Mix (Span 5) -->
+                    <div class="col-span-5 flex flex-col h-full">
+                        <div
+                            class="img-placeholder flex-1 rounded-2xl bg-slate-50 border-none relative group overflow-hidden">
+                            <!-- Image Placeholder -->
+                            <div class="text-center group-hover:scale-105 transition duration-500">
+                                <i class="fa-solid fa-wand-magic-sparkles text-5xl text-blue-200 mb-4"></i>
+                                <p class="text-slate-400 font-medium">브랜드 대표 이미지 삽입</p>
+                                <p class="text-slate-300 text-xs mt-1">(예: 디즈니 캐슬, 불꽃놀이)</p>
+                            </div>
+
+                            <!-- Overlay Info -->
+                            <div
+                                class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-5 rounded-xl shadow-lg border border-slate-100">
+                                <h4 class="font-bold text-slate-800 mb-3 text-sm">Business Portfolio</h4>
+                                <div class="flex justify-between text-xs">
+                                    <div class="text-center">
+                                        <div class="text-blue-600 font-black text-lg">45%</div>
+                                        <div class="text-slate-500">Media</div>
+                                    </div>
+                                    <div class="w-px bg-slate-200"></div>
+                                    <div class="text-center">
+                                        <div class="text-green-600 font-black text-lg">32%</div>
+                                        <div class="text-slate-500">Parks</div>
+                                    </div>
+                                    <div class="w-px bg-slate-200"></div>
+                                    <div class="text-center">
+                                        <div class="text-red-500 font-black text-lg">23%</div>
+                                        <div class="text-slate-500">Sports</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 네비게이션 버튼 -->
+    <button class="nav-btn prev-btn" onclick="prevSlide()"><i class="fa-solid fa-arrow-left mr-2"></i>Prev</button>
+    <button class="nav-btn next-btn" onclick="nextSlide()">Next<i class="fa-solid fa-arrow-right ml-2"></i></button>
+
+    <script>
+        let currentSlide = 5;
+        const totalSlides = 6;
+        const startSlide = 5;
+
+        function showSlide(n) {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+
+            // 5, 6번 슬라이드만 순환
+            if (n > totalSlides) currentSlide = startSlide;
+            else if (n < startSlide) currentSlide = totalSlides;
+            else currentSlide = n;
+
+            document.getElementById('slide' + currentSlide).classList.add('active');
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight') nextSlide();
+            if (event.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>
+```

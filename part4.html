@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Conclusion (Slide 20-26)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 테마 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #050505;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.2);
+            background: radial-gradient(circle at 50% 120%, #1e1b4b, #020617);
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        /* 유틸리티 */
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        /* 배경 별빛 효과 */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(1px 1px at 20px 30px, #fff, transparent), radial-gradient(2px 2px at 100px 50px, #fff, transparent);
+            background-size: 300px 300px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* 네비게이션 */
+        .nav-btn {
+            position: fixed;
+            bottom: 30px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        .prev-btn {
+            right: 100px;
+        }
+
+        .next-btn {
+            right: 30px;
+        }
+
+        /* Slide 23 Pyramid Effect */
+        .pyramid-level {
+            transition: 0.3s;
+            clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+        }
+
+        .pyramid-level:hover {
+            transform: scale(1.02);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide-container">
+        <div class="stars"></div>
+
+        <!-- ==================== SLIDE 20: 5 Key Insights ==================== -->
+        <div class="slide active" id="slide20">
+            <div class="h-full flex flex-col p-12">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <p class="text-blue-400 font-serif italic mb-2">Key Findings</p>
+                        <h2 class="text-5xl font-bold text-white">5 Core Insights</h2>
+                    </div>
+                    <div class="text-6xl font-black text-white/5 font-oswald">20</div>
+                </div>
+
+                <div class="grid grid-cols-5 gap-4 h-96">
+                    <!-- Card 1 -->
+                    <div
+                        class="glass p-6 rounded-xl flex flex-col justify-between border-t-4 border-blue-500 hover:-translate-y-2 transition duration-300">
+                        <div class="text-4xl font-black text-blue-500/20">01</div>
+                        <div>
+                            <i class="fa-solid fa-circle-nodes text-3xl text-blue-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">IP Ecosystem</h3>
+                            <p class="text-xs text-gray-400">One IP, Multi-Platform. 10x Revenue Multiplier.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div
+                        class="glass p-6 rounded-xl flex flex-col justify-between border-t-4 border-red-500 hover:-translate-y-2 transition duration-300">
+                        <div class="text-4xl font-black text-red-500/20">02</div>
+                        <div>
+                            <i class="fa-solid fa-handshake text-3xl text-red-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">Strategic M&A</h3>
+                            <p class="text-xs text-gray-400">$87B Investment created $200B+ Value.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div
+                        class="glass p-6 rounded-xl flex flex-col justify-between border-t-4 border-yellow-500 hover:-translate-y-2 transition duration-300">
+                        <div class="text-4xl font-black text-yellow-500/20">03</div>
+                        <div>
+                            <i class="fa-solid fa-scale-balanced text-3xl text-yellow-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">Glocal Balance</h3>
+                            <p class="text-xs text-gray-400">Think Global, Act Local. (Shanghai Case)</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div
+                        class="glass p-6 rounded-xl flex flex-col justify-between border-t-4 border-purple-500 hover:-translate-y-2 transition duration-300">
+                        <div class="text-4xl font-black text-purple-500/20">04</div>
+                        <div>
+                            <i class="fa-solid fa-rocket text-3xl text-purple-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">Digital Shift</h3>
+                            <p class="text-xs text-gray-400">Bold transition from legacy to streaming.</p>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div
+                        class="glass p-6 rounded-xl flex flex-col justify-between border-t-4 border-green-500 hover:-translate-y-2 transition duration-300">
+                        <div class="text-4xl font-black text-green-500/20">05</div>
+                        <div>
+                            <i class="fa-solid fa-clock text-3xl text-green-400 mb-4"></i>
+                            <h3 class="font-bold text-white mb-2">Patience</h3>
+                            <p class="text-xs text-gray-400">Long-term vision over short-term gain.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 text-center glass p-6 rounded-full border border-white/10">
+                    <p class="text-xl font-serif text-white italic">"Strategic Patience & Flexibility is the Key"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 21: Strategic Implications ==================== -->
+        <div class="slide" id="slide21">
+            <div class="h-full flex flex-col p-12">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <p class="text-green-400 font-serif italic mb-2">For Global Companies</p>
+                        <h2 class="text-5xl font-bold text-white">Strategic Implications</h2>
+                    </div>
+                    <div class="text-6xl font-black text-white/5 font-oswald">21</div>
+                </div>
+
+                <!-- Bento Grid Layout -->
+                <div class="grid grid-cols-3 grid-rows-2 gap-6 h-full pb-4">
+                    <!-- Box 1: IP Asset -->
+                    <div class="glass p-6 rounded-2xl border-l-4 border-blue-500">
+                        <i class="fa-solid fa-gem text-2xl text-blue-400 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">IP as Core Asset</h3>
+                        <p class="text-sm text-gray-300">Intangible assets are the new gold. Invest in creative talent &
+                            protection.</p>
+                    </div>
+                    <!-- Box 2: Ecosystem -->
+                    <div class="glass p-6 rounded-2xl border-l-4 border-purple-500">
+                        <i class="fa-solid fa-network-wired text-2xl text-purple-400 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Integrated Model</h3>
+                        <p class="text-sm text-gray-300">Move from single product to ecosystem. Cross-platform synergy
+                            is mandatory.</p>
+                    </div>
+                    <!-- Box 3: Culture -->
+                    <div class="glass p-6 rounded-2xl border-l-4 border-yellow-500">
+                        <i class="fa-solid fa-earth-asia text-2xl text-yellow-400 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Cultural Sensitivity</h3>
+                        <p class="text-sm text-gray-300">Respect local markets. Use local partners and insights.</p>
+                    </div>
+                    <!-- Box 4: Digital -->
+                    <div class="glass p-6 rounded-2xl border-l-4 border-red-500">
+                        <i class="fa-solid fa-laptop-code text-2xl text-red-400 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Digital First</h3>
+                        <p class="text-sm text-gray-300">Cannibalize yourself before others do. Own the customer data.
+                        </p>
+                    </div>
+                    <!-- Box 5: Entry Mode -->
+                    <div class="glass p-6 rounded-2xl border-l-4 border-green-500">
+                        <i class="fa-solid fa-door-open text-2xl text-green-400 mb-3"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Flexible Entry</h3>
+                        <p class="text-sm text-gray-300">One size doesn't fit all. Balance risk and control dynamically.
+                        </p>
+                    </div>
+                    <!-- Summary Box -->
+                    <div
+                        class="glass p-6 rounded-2xl bg-gradient-to-br from-white/10 to-transparent flex items-center justify-center text-center">
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-1">Success Formula</h3>
+                            <p class="text-xs text-gray-400">Clarity × Execution × Patience × Innovation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 22: Implications for Korea ==================== -->
+        <div class="slide" id="slide22">
+            <div class="h-full flex flex-col p-12">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <p class="text-purple-400 font-serif italic mb-2">For Korean Industries</p>
+                        <h2 class="text-5xl font-bold text-white">Lessons for Korea</h2>
+                    </div>
+                    <div class="text-6xl font-black text-white/5 font-oswald">22</div>
+                </div>
+
+                <div class="flex gap-6 h-full pb-8">
+                    <!-- K-Content -->
+                    <div
+                        class="w-1/3 glass p-8 rounded-2xl border-t-4 border-purple-500 hover:bg-purple-900/10 transition">
+                        <div
+                            class="w-16 h-16 rounded-full bg-purple-500/20 flex items-center justify-center text-3xl text-purple-400 mb-6">
+                            <i class="fa-solid fa-music"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">K-Content</h3>
+                        <p class="text-xs text-purple-300 mb-6">CJ ENM, HYBE</p>
+                        <ul class="text-sm text-gray-300 space-y-4">
+                            <li><i class="fa-solid fa-check text-purple-500 mr-2"></i><strong>IP
+                                    Diversification:</strong> Music → Game → Goods (Like BTS)</li>
+                            <li><i class="fa-solid fa-check text-purple-500 mr-2"></i><strong>Global Platform:</strong>
+                                Build own platforms (Weverse)</li>
+                            <li><i class="fa-solid fa-check text-purple-500 mr-2"></i><strong>Long-term View:</strong>
+                                Extend IP lifecycle beyond trends</li>
+                        </ul>
+                    </div>
+
+                    <!-- Manufacturing -->
+                    <div class="w-1/3 glass p-8 rounded-2xl border-t-4 border-blue-500 hover:bg-blue-900/10 transition">
+                        <div
+                            class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center text-3xl text-blue-400 mb-6">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Manufacturing</h3>
+                        <p class="text-xs text-blue-300 mb-6">Samsung, Hyundai</p>
+                        <ul class="text-sm text-gray-300 space-y-4">
+                            <li><i class="fa-solid fa-check text-blue-500 mr-2"></i><strong>Product to
+                                    Experience:</strong> Sell the lifestyle, not just specs</li>
+                            <li><i class="fa-solid fa-check text-blue-500 mr-2"></i><strong>Storytelling:</strong> Tech
+                                needs emotion (Brand Universe)</li>
+                            <li><i class="fa-solid fa-check text-blue-500 mr-2"></i><strong>Fandom:</strong> Create
+                                loyal fans like Disney</li>
+                        </ul>
+                    </div>
+
+                    <!-- Tourism -->
+                    <div
+                        class="w-1/3 glass p-8 rounded-2xl border-t-4 border-green-500 hover:bg-green-900/10 transition">
+                        <div
+                            class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center text-3xl text-green-400 mb-6">
+                            <i class="fa-solid fa-ticket"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Tourism</h3>
+                        <p class="text-xs text-green-300 mb-6">Lotte, Everland</p>
+                        <ul class="text-sm text-gray-300 space-y-4">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Global IP:</strong> Develop
+                                characters beyond local market</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Tech Fusion:</strong> Mix
+                                K-Culture with VR/AR</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Patience:</strong>
+                                Long-term investment for expansion</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 23: Future Challenges (Pyramid) ==================== -->
+        <div class="slide" id="slide23">
+            <div class="h-full flex flex-col p-12">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl font-bold text-white">Future Challenges</h2>
+                    <p class="text-gray-400">Roadmap to the Next 100 Years</p>
+                </div>
+
+                <div class="flex-1 flex flex-col items-center justify-end pb-8 space-y-2">
+
+                    <!-- Top: Short Term -->
+                    <div
+                        class="pyramid-level w-[400px] h-32 bg-gradient-to-r from-red-600 to-orange-600 flex flex-col items-center justify-center text-white p-4 relative">
+                        <span class="absolute -left-32 text-red-400 font-bold font-oswald text-xl">SHORT TERM</span>
+                        <i class="fa-solid fa-coins text-2xl mb-2"></i>
+                        <h3 class="font-bold text-lg">Profitability & Efficiency</h3>
+                        <p class="text-xs opacity-80 mt-1">Streaming Profit / Cost Cut</p>
+                    </div>
+
+                    <!-- Middle: Mid Term -->
+                    <div
+                        class="pyramid-level w-[600px] h-32 bg-gradient-to-r from-orange-600 to-yellow-600 flex flex-col items-center justify-center text-white p-4 relative">
+                        <span class="absolute -left-32 text-orange-400 font-bold font-oswald text-xl">MID TERM</span>
+                        <i class="fa-solid fa-layer-group text-2xl mb-2"></i>
+                        <h3 class="font-bold text-lg">Diversification & New IP</h3>
+                        <p class="text-xs opacity-80 mt-1">Reduce China Dependency / Original Content</p>
+                    </div>
+
+                    <!-- Bottom: Long Term -->
+                    <div
+                        class="pyramid-level w-[800px] h-32 bg-gradient-to-r from-green-600 to-emerald-700 flex flex-col items-center justify-center text-white p-4 relative">
+                        <span class="absolute -left-32 text-green-400 font-bold font-oswald text-xl">LONG TERM</span>
+                        <i class="fa-solid fa-vr-cardboard text-2xl mb-2"></i>
+                        <h3 class="font-bold text-lg">Tech Innovation & New Markets</h3>
+                        <p class="text-xs opacity-80 mt-1">AI, Metaverse / India, SEA / ESG</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 24: Conclusion (The Star) ==================== -->
+        <div class="slide" id="slide24">
+            <div class="h-full flex flex-col items-center justify-center relative p-12">
+                <!-- Background Glow -->
+                <div class="absolute w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-[100px] animate-pulse"></div>
+
+                <!-- Central Star/Logo -->
+                <div class="relative z-10 text-center mb-12">
+                    <i
+                        class="fa-solid fa-star text-6xl text-yellow-400 mb-6 drop-shadow-[0_0_20px_rgba(250,204,21,0.8)]"></i>
+                    <h1 class="text-6xl font-bold text-white font-serif mb-4">The Magic of Strategy</h1>
+                    <p class="text-xl text-gray-300 tracking-widest uppercase">100 Years of Innovation</p>
+                </div>
+
+                <!-- 5 Principles (Horizontal) -->
+                <div class="flex gap-4 mb-16 relative z-10">
+                    <div class="px-6 py-2 border border-white/20 rounded-full text-sm text-gray-300">Core Competence
+                    </div>
+                    <div class="px-6 py-2 border border-white/20 rounded-full text-sm text-gray-300">Cultural Respect
+                    </div>
+                    <div class="px-6 py-2 border border-white/20 rounded-full text-sm text-gray-300">Flexibility</div>
+                    <div class="px-6 py-2 border border-white/20 rounded-full text-sm text-gray-300">Integration</div>
+                    <div class="px-6 py-2 border border-white/20 rounded-full text-sm text-gray-300">Innovation</div>
+                </div>
+
+                <!-- Quote Box -->
+                <div class="glass p-8 rounded-2xl max-w-3xl text-center relative z-10 border-t-2 border-yellow-500">
+                    <i class="fa-solid fa-quote-left text-yellow-500 text-2xl mb-4 block"></i>
+                    <p class="text-2xl font-serif text-white italic mb-4">"The difference in winning and losing is most
+                        often not quitting."</p>
+                    <p class="text-sm text-gray-400 font-bold uppercase">- Walt Disney -</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 25: Q&A ==================== -->
+        <div class="slide" id="slide25">
+            <div class="h-full flex items-center justify-center relative">
+                <!-- Big Question Mark -->
+                <div class="absolute text-[400px] font-black text-white/5 font-serif select-none pointer-events-none">?
+                </div>
+
+                <div class="flex gap-16 items-center relative z-10">
+                    <div class="text-center">
+                        <h2 class="text-8xl font-bold text-white mb-2">Q & A</h2>
+                        <p class="text-blue-400 text-xl">Ask us anything</p>
+                    </div>
+
+                    <div class="w-px h-64 bg-white/20"></div>
+
+                    <div class="glass p-8 rounded-2xl w-96">
+                        <h3 class="text-gray-400 text-sm uppercase mb-4 font-bold">Common Questions</h3>
+                        <ul class="space-y-4 text-sm text-gray-300">
+                            <li class="flex items-center gap-3"><i
+                                    class="fa-regular fa-circle-question text-blue-400"></i> Streaming Profitability?
+                            </li>
+                            <li class="flex items-center gap-3"><i
+                                    class="fa-regular fa-circle-question text-blue-400"></i> China Market Risk?</li>
+                            <li class="flex items-center gap-3"><i
+                                    class="fa-regular fa-circle-question text-blue-400"></i> Next M&A Target?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 26: References ==================== -->
+        <div class="slide" id="slide26">
+            <div class="h-full flex flex-col p-12">
+                <div class="mb-8 border-b border-white/10 pb-4">
+                    <h2 class="text-3xl font-bold text-white">References</h2>
+                </div>
+
+                <div class="grid grid-cols-2 gap-12 text-xs text-gray-400 overflow-y-auto">
+                    <div>
+                        <h4 class="text-white font-bold mb-3 text-sm">Official & Financial</h4>
+                        <ul class="space-y-2 mb-6">
+                            <li>• The Walt Disney Company Annual Report (2023)</li>
+                            <li>• Disney Investor Relations (Financial Statements)</li>
+                            <li>• Disney+ Investor Day Presentations (2020-2023)</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold mb-3 text-sm">Academic & Case Studies</h4>
+                        <ul class="space-y-2">
+                            <li>• Harvard Business School: "The Walt Disney Company: The Entertainment King"</li>
+                            <li>• Journal of International Business Studies: "Cultural Adaptation"</li>
+                            <li>• Strategic Management Journal: "IP-based Business Models"</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="text-white font-bold mb-3 text-sm">Media & News</h4>
+                        <ul class="space-y-2 mb-6">
+                            <li>• Bloomberg Businessweek: Disney streaming strategy analysis</li>
+                            <li>• The Wall Street Journal: Disney financial coverage</li>
+                            <li>• Forbes: Disney brand valuation</li>
+                            <li>• Variety / Hollywood Reporter</li>
+                        </ul>
+
+                        <h4 class="text-white font-bold mb-3 text-sm">Books</h4>
+                        <ul class="space-y-2">
+                            <li>• "The Ride of a Lifetime" - Bob Iger</li>
+                            <li>• "The Disney Way" - Bill Capodagli</li>
+                            <li>• "Disney U" - Doug Lipp</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-auto text-center pt-8 text-gray-600 text-[10px]">
+                    © 2024 Team Disney Project. All Rights Reserved.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 네비게이션 버튼 -->
+    <button class="nav-btn prev-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="nav-btn next-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <script>
+        let currentSlide = 20;
+        const totalSlides = 26;
+        const startSlide = 20;
+
+        function showSlide(n) {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+
+            if (n > totalSlides) currentSlide = startSlide;
+            else if (n < startSlide) currentSlide = totalSlides;
+            else currentSlide = n;
+
+            document.getElementById('slide' + currentSlide).classList.add('active');
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight') nextSlide();
+            if (event.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>

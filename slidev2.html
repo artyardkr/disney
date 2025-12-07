@@ -1,0 +1,537 @@
+```html
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Strategy Analysis (Slide 7-10)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 기본 설정 (Dark Cinematic Theme) */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #050505;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.2);
+            background: radial-gradient(circle at 50% 120%, #1e1b4b, #020617);
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        /* 폰트 유틸리티 */
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* 배경 애니메이션 (별빛) */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 40px 70px, #fff, transparent),
+                radial-gradient(2px 2px at 90px 40px, #fff, transparent);
+            background-size: 200px 200px;
+            animation: twinkle 5s infinite linear;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-200px);
+            }
+        }
+
+        /* 유리 질감 */
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 네비게이션 */
+        .nav-btn {
+            position: fixed;
+            bottom: 30px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .prev-btn {
+            right: 100px;
+        }
+
+        .next-btn {
+            right: 30px;
+        }
+
+        /* 이미지 플레이스홀더 */
+        .img-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-box:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* 커스텀 효과 */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+
+        .orbit-container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+
+        .orbit-item {
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .orbit-item:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide-container">
+        <div class="stars"></div>
+
+        <!-- ==================== SLIDE 7: 5대 글로벌 전략 (Orbit) ==================== -->
+        <div class="slide active" id="slide7">
+            <div class="h-full flex items-center justify-center relative p-12">
+                <!-- Header -->
+                <div class="absolute top-12 left-12">
+                    <p class="text-blue-400 font-serif italic mb-2">Strategic Overview</p>
+                    <h2 class="text-5xl font-bold text-white">5 Core Strategies</h2>
+                </div>
+                <div class="absolute top-12 right-12 text-6xl font-black text-white/5 font-oswald">07</div>
+
+                <!-- Orbit Diagram -->
+                <div class="orbit-container flex items-center justify-center">
+                    <!-- Center Core -->
+                    <div
+                        class="w-64 h-64 rounded-full bg-gradient-to-br from-blue-600 to-indigo-900 flex flex-col items-center justify-center text-white shadow-[0_0_50px_rgba(37,99,235,0.5)] z-10 relative">
+                        <i class="fa-solid fa-wand-magic-sparkles text-4xl mb-3 text-yellow-300"></i>
+                        <h3 class="text-2xl font-bold">IP Ecosystem</h3>
+                        <p class="text-xs text-blue-200 mt-1">Storytelling Core</p>
+                        <!-- Orbit Rings -->
+                        <div
+                            class="absolute w-[140%] h-[140%] border border-white/10 rounded-full animate-[spin_20s_linear_infinite]">
+                        </div>
+                        <div
+                            class="absolute w-[180%] h-[180%] border border-white/5 rounded-full animate-[spin_30s_linear_infinite_reverse]">
+                        </div>
+                    </div>
+
+                    <!-- Satellites -->
+                    <!-- 1. M&A -->
+                    <div class="orbit-item" style="top: -60px;">
+                        <i class="fa-solid fa-handshake text-red-400 text-2xl mb-2"></i>
+                        <span class="text-sm font-bold text-white">M&A Strategy</span>
+                    </div>
+                    <!-- 2. Localization -->
+                    <div class="orbit-item" style="top: 80px; right: -80px;">
+                        <i class="fa-solid fa-earth-asia text-green-400 text-2xl mb-2"></i>
+                        <span class="text-sm font-bold text-white">Glocalization</span>
+                    </div>
+                    <!-- 3. Digital -->
+                    <div class="orbit-item" style="bottom: -60px;">
+                        <i class="fa-solid fa-wifi text-blue-400 text-2xl mb-2"></i>
+                        <span class="text-sm font-bold text-white">Digital Trans.</span>
+                    </div>
+                    <!-- 4. Market Entry -->
+                    <div class="orbit-item" style="top: 80px; left: -80px;">
+                        <i class="fa-solid fa-door-open text-orange-400 text-2xl mb-2"></i>
+                        <span class="text-sm font-bold text-white">Market Entry</span>
+                    </div>
+                    <!-- 5. Integrated -->
+                    <div class="absolute bottom-12 right-12 glass px-6 py-3 rounded-full border-l-4 border-purple-500">
+                        <span class="text-white font-bold"><i class="fa-solid fa-arrows-spin mr-2"></i>Integrated
+                            Model</span>
+                    </div>
+                </div>
+
+                <!-- Philosophy Box -->
+                <div class="absolute bottom-12 left-12 glass p-6 rounded-xl border-t border-white/20">
+                    <p class="text-gray-400 text-xs uppercase tracking-widest mb-2">Philosophy</p>
+                    <p class="text-xl font-serif text-white italic">"Think Global, Act Local"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 8: M&A Strategy (Timeline) ==================== -->
+        <div class="slide" id="slide8">
+            <div class="h-full flex flex-col p-12">
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <p class="text-red-400 font-serif italic mb-2">Strategic M&A</p>
+                        <h2 class="text-5xl font-bold text-white">Building the Empire</h2>
+                    </div>
+                    <div class="text-6xl font-black text-white/5 font-oswald">08</div>
+                </div>
+
+                <!-- 4 Columns Timeline -->
+                <div class="grid grid-cols-4 gap-6 h-full pb-8">
+
+                    <!-- Pixar -->
+                    <div
+                        class="glass p-6 rounded-2xl border-t-4 border-blue-500 flex flex-col hover:-translate-y-2 transition duration-300 group">
+                        <div
+                            class="text-blue-500 font-oswald text-5xl font-bold mb-2 opacity-50 group-hover:opacity-100 transition">
+                            2006</div>
+                        <div class="h-12 flex items-center mb-4">
+                            <span class="text-2xl font-black text-white tracking-widest">PIXAR</span>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-4">$7.4 B</div>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li>• Toy Story</li>
+                            <li>• Finding Nemo</li>
+                            <li>• Inside Out</li>
+                        </ul>
+                    </div>
+
+                    <!-- Marvel -->
+                    <div
+                        class="glass p-6 rounded-2xl border-t-4 border-red-600 flex flex-col hover:-translate-y-2 transition duration-300 group">
+                        <div
+                            class="text-red-600 font-oswald text-5xl font-bold mb-2 opacity-50 group-hover:opacity-100 transition">
+                            2009</div>
+                        <div class="h-12 flex items-center mb-4">
+                            <span class="text-2xl font-black text-white bg-red-600 px-2">MARVEL</span>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-4">$4.0 B</div>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li>• Avengers</li>
+                            <li>• Iron Man</li>
+                            <li>• Black Panther</li>
+                        </ul>
+                    </div>
+
+                    <!-- Lucasfilm -->
+                    <div
+                        class="glass p-6 rounded-2xl border-t-4 border-yellow-500 flex flex-col hover:-translate-y-2 transition duration-300 group">
+                        <div
+                            class="text-yellow-500 font-oswald text-5xl font-bold mb-2 opacity-50 group-hover:opacity-100 transition">
+                            2012</div>
+                        <div class="h-12 flex items-center mb-4">
+                            <span class="text-xl font-black text-yellow-500 tracking-widest">LUCASFILM</span>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-4">$4.0 B</div>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li>• Star Wars</li>
+                            <li>• Indiana Jones</li>
+                            <li>• SF Franchise</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fox -->
+                    <div
+                        class="glass p-6 rounded-2xl border-t-4 border-orange-500 flex flex-col hover:-translate-y-2 transition duration-300 group">
+                        <div
+                            class="text-orange-500 font-oswald text-5xl font-bold mb-2 opacity-50 group-hover:opacity-100 transition">
+                            2019</div>
+                        <div class="h-12 flex items-center mb-4">
+                            <span class="text-xl font-black text-white tracking-wide">21st CENTURY</span>
+                        </div>
+                        <div class="text-3xl font-bold text-white mb-4">$71.3 B</div>
+                        <ul class="text-sm text-gray-400 space-y-2">
+                            <li>• Avatar</li>
+                            <li>• X-Men</li>
+                            <li>• Simpsons</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ROI Footer -->
+                <div class="absolute bottom-8 right-12 text-right">
+                    <p class="text-gray-400 text-sm">Total Investment $86.7B</p>
+                    <p class="text-3xl font-bold text-green-400 glow-text">Current Value $200B+ (2.3x ROI)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 9: Market Entry Modes (Cards) ==================== -->
+        <div class="slide" id="slide9">
+            <div class="h-full flex flex-col p-12">
+                <div class="flex justify-between items-end mb-10">
+                    <div>
+                        <p class="text-green-400 font-serif italic mb-2">Market Entry Strategy</p>
+                        <h2 class="text-5xl font-bold text-white">Flexible Expansion</h2>
+                    </div>
+                    <div class="text-6xl font-black text-white/5 font-oswald">09</div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-8 h-full pb-8">
+                    <!-- Mode 1: Licensing -->
+                    <div class="glass p-8 rounded-2xl flex flex-col relative overflow-hidden group">
+                        <div
+                            class="absolute -right-6 -top-6 w-24 h-24 bg-blue-500/20 rounded-full blur-2xl group-hover:bg-blue-500/40 transition">
+                        </div>
+                        <i class="fa-regular fa-file-lines text-4xl text-blue-400 mb-6"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Licensing</h3>
+                        <p class="text-blue-400 text-sm mb-6">Low Risk, Low Return</p>
+
+                        <div class="space-y-4 text-sm text-gray-300 border-t border-white/10 pt-4">
+                            <div class="flex justify-between">
+                                <span>Example</span>
+                                <span class="font-bold text-white">Tokyo (1983)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Equity</span>
+                                <span class="font-bold text-white">0%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Profit</span>
+                                <span class="font-bold text-white">Royalty (10%)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mode 2: JV -->
+                    <div class="glass p-8 rounded-2xl flex flex-col relative overflow-hidden group">
+                        <div
+                            class="absolute -right-6 -top-6 w-24 h-24 bg-green-500/20 rounded-full blur-2xl group-hover:bg-green-500/40 transition">
+                        </div>
+                        <i class="fa-solid fa-handshake-simple text-4xl text-green-400 mb-6"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Joint Venture</h3>
+                        <p class="text-green-400 text-sm mb-6">Shared Risk</p>
+
+                        <div class="space-y-4 text-sm text-gray-300 border-t border-white/10 pt-4">
+                            <div class="flex justify-between">
+                                <span>Example</span>
+                                <span class="font-bold text-white">Paris / HK</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Equity</span>
+                                <span class="font-bold text-white">~47%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Profit</span>
+                                <span class="font-bold text-white">Dividend</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mode 3: Strategic JV -->
+                    <div
+                        class="glass p-8 rounded-2xl flex flex-col relative overflow-hidden border border-yellow-500/30 group">
+                        <div
+                            class="absolute -right-6 -top-6 w-24 h-24 bg-yellow-500/20 rounded-full blur-2xl group-hover:bg-yellow-500/40 transition">
+                        </div>
+                        <i class="fa-solid fa-chess-queen text-4xl text-yellow-400 mb-6"></i>
+                        <h3 class="text-2xl font-bold text-white mb-2">Strategic Inv.</h3>
+                        <p class="text-yellow-400 text-sm mb-6">High Risk, High Return</p>
+
+                        <div class="space-y-4 text-sm text-gray-300 border-t border-white/10 pt-4">
+                            <div class="flex justify-between">
+                                <span>Example</span>
+                                <span class="font-bold text-white">Shanghai (2016)</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Investment</span>
+                                <span class="font-bold text-white">$5.5 Billion</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Strategy</span>
+                                <span class="font-bold text-white">Deep Localization</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 10: Glocalization (Split) ==================== -->
+        <div class="slide" id="slide10">
+            <div class="h-full flex relative">
+                <!-- Center Divider -->
+                <div
+                    class="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent z-20">
+                </div>
+                <div
+                    class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 bg-black border border-white/20 rounded-full px-4 py-2 text-white font-bold text-sm">
+                    VS</div>
+
+                <!-- Left: Standardization (Blue) -->
+                <div class="w-1/2 h-full bg-blue-900/10 p-12 flex flex-col justify-center relative">
+                    <div class="absolute top-12 left-12 text-6xl font-black text-blue-500/10 font-oswald">STANDARD</div>
+
+                    <div class="relative z-10 pl-8 border-l-4 border-blue-500">
+                        <h3 class="text-3xl font-bold text-white mb-6">Global Standard (60%)</h3>
+                        <ul class="space-y-6 text-gray-300">
+                            <li class="flex items-center gap-4">
+                                <i class="fa-solid fa-crown text-blue-400 text-xl"></i>
+                                <div>
+                                    <p class="font-bold text-white">Core IP & Brand</p>
+                                    <p class="text-sm">Mickey, Castle, Princesses</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <i class="fa-solid fa-shield-halved text-blue-400 text-xl"></i>
+                                <div>
+                                    <p class="font-bold text-white">Safety & Service</p>
+                                    <p class="text-sm">Global Quality Control</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-4">
+                                <i class="fa-solid fa-book-open text-blue-400 text-xl"></i>
+                                <div>
+                                    <p class="font-bold text-white">Storytelling</p>
+                                    <p class="text-sm">Universal Emotion</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: Localization (Red/Gold) -->
+                <div class="w-1/2 h-full bg-red-900/10 p-12 flex flex-col justify-center relative">
+                    <div class="absolute bottom-12 right-12 text-6xl font-black text-red-500/10 font-oswald">LOCAL</div>
+
+                    <div class="relative z-10 pr-8 border-r-4 border-red-500 text-right">
+                        <h3 class="text-3xl font-bold text-white mb-6">Localization (40%)</h3>
+                        <ul class="space-y-6 text-gray-300 flex flex-col items-end">
+                            <li class="flex items-center gap-4 flex-row-reverse">
+                                <i class="fa-solid fa-utensils text-red-400 text-xl"></i>
+                                <div>
+                                    <p class="font-bold text-white">Food & Culture</p>
+                                    <p class="text-sm">Local Cuisine (e.g., Chinese Food)</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-4 flex-row-reverse">
+                                <i class="fa-solid fa-language text-red-400 text-xl"></i>
+                                <div>
+                                    <p class="font-bold text-white">Language & Customs</p>
+                                    <p class="text-sm">Native Dubbing & Festivals</p>
+                                </div>
+                            </li>
+                            <li class="flex items-center gap-4 flex-row-reverse">
+                                <i class="fa-solid fa-dragon text-red-400 text-xl"></i>
+                                <div>
+                                    <p class="font-bold text-white">Architecture</p>
+                                    <p class="text-sm">Feng Shui, 12 Zodiacs (Shanghai)</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Center Image (Shanghai) -->
+                <div
+                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-32 w-80 h-48 img-box rounded-xl z-20 border-yellow-500/50 shadow-[0_0_30px_rgba(234,179,8,0.2)]">
+                    <i class="fa-solid fa-place-of-worship text-4xl text-yellow-500 mb-2"></i>
+                    <span class="font-bold text-white">Shanghai Disney</span>
+                    <span class="text-xs text-yellow-500">Success Case</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 네비게이션 버튼 -->
+    <button class="nav-btn prev-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="nav-btn next-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <script>
+        let currentSlide = 7;
+        const totalSlides = 10;
+        const startSlide = 7;
+
+        function showSlide(n) {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+
+            if (n > totalSlides) currentSlide = startSlide;
+            else if (n < startSlide) currentSlide = totalSlides;
+            else currentSlide = n;
+
+            document.getElementById('slide' + currentSlide).classList.add('active');
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight') nextSlide();
+            if (event.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>
+```

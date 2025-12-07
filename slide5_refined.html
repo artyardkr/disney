@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Slide 5 Refined (Map)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* =========================================
+           통합 스타일 (Dark Cinematic Theme - FHD)
+           ========================================= */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* FHD Scaling Fix: Increase root font size to scale rem units */
+        html {
+            font-size: 24px;
+            /* 16px * 1.5 = 24px */
+        }
+
+        .slide-container {
+            width: 1920px;
+            height: 1080px;
+            flex-shrink: 0;
+            position: relative;
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.2);
+            background: radial-gradient(circle at 50% 120%, #1e1b4b, #020617);
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            /* 기본 숨김 */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+            z-index: 10;
+        }
+
+        /* 유틸리티 클래스 */
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .img-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+
+        /* 배경 별빛 효과 */
+        .stars {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(1px 1px at 20px 30px, #fff, transparent), radial-gradient(2px 2px at 100px 50px, #fff, transparent);
+            background-size: 450px 450px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* 컨트롤러 버튼 */
+        .controls {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 50px;
+            display: flex;
+            gap: 15px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #3b82f6;
+        }
+
+        .page-indicator {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        /* Map Styles */
+        .map-bg {
+            background-image: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" fill="%232c3e50"%3E%3Cpath d="M783,313c0,0-16.5-6.5-25.5-12.5s-24-9-24-9s-12,5-12,17s9,18,9,18s-3,9-9,13s-36,21-36,21s-10-8-19-14s-32-13-32-13l-10,6l-11,28l-37,18l-35,33l-12,23l6,14l27,1l17-10l12-14l3-21l-7-14l6-16l19-10l12,5l13,20l1,19l-9,13l-24,24l-31,23l-34,16l-37,3l-35-15l-19-19l-7-19l11-8l20,6l14,3l7-10l-6-16l-17-13l-20-4l-21,8l-12,15l-4,13l8,8l13,1l9-7l3-12l-7-10l-15-2l-10,6l-2,13l10,13l13,7l7-9l-3-11l-9-7l-15,1l-10,12l1,13l11,9l14,1l6-10l-9-15l-21-4l-20,7l-10,16l5,14l12,6l15-2l8-10l-8-16l-19-6l-18,5l-8,14l5,13l13,7l15-1l7-11l-9-15l-20-4l-18,6l-10,17l3,15l15,9l19,1l12-9l-2-15l-14-11l-18,2l-13,12l-2,15l9,14l18,7l16-4l8-14l-6-17l-18-9l-21,1l-15,12l-5,18l6,16l15,10l16,1l9-10l-3-17z M418,284c0,0-9-19-15-24s-19-12-19-12l-22,6l-17,19l-7,21l5,18l18,12l21,1l15-11l-3-24L418,284z M221,419l-13-17l-26-4l-24,9l-12,16l4,12l19,8l24-1l18-10L221,419z"/%3E%3C/svg%3E');
+            /* Simplified placeholder SVG, will be replaced with better one */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+        }
+
+        .pin {
+            position: absolute;
+            transform: translate(-50%, -100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .pin:hover {
+            transform: translate(-50%, -110%) scale(1.1);
+            z-index: 50;
+        }
+
+        .pin i {
+            font-size: 2rem;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+        }
+
+        .pin .label {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            white-space: nowrap;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .pin.us-ca {
+            left: 18%;
+            top: 40%;
+        }
+
+        .pin.us-fl {
+            left: 24%;
+            top: 45%;
+        }
+
+        .pin.eu-pa {
+            left: 49%;
+            top: 32%;
+        }
+
+        .pin.asia-tk {
+            left: 82%;
+            top: 38%;
+        }
+
+        .pin.asia-sh {
+            left: 78%;
+            top: 42%;
+        }
+
+        .pin.asia-hk {
+            left: 76%;
+            top: 48%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide-container" id="slideContainer">
+        <div class="stars"></div>
+
+        <!-- ==================== SLIDE 5: Global Expansion (Refined Map) ==================== -->
+        <div class="slide active" id="slide5">
+            <div class="h-full flex flex-col p-12 relative z-10">
+                <div class="mb-8 flex justify-between items-start">
+                    <div>
+                        <p class="text-blue-400 font-serif italic mb-2">Global Footprint</p>
+                        <h2 class="text-5xl font-bold text-white">글로벌 디즈니 네트워크</h2>
+                    </div>
+
+                    <div class="flex gap-8 h-full">
+                        <!-- Map Area -->
+                        <div
+                            class="w-3/4 glass rounded-2xl p-0 relative overflow-hidden flex items-center justify-center bg-blue-900/10">
+                            <!-- World Map Background (PNG) -->
+                            <div class="absolute inset-0 opacity-60">
+                                <img src="worldmap.png" class="w-full h-full object-contain mix-blend-screen"
+                                    style="filter: brightness(0.8) sepia(0.2) hue-rotate(190deg);">
+                            </div>
+
+                            <!-- Pins -->
+                            <div class="pin us-ca" title="Disneyland Resort (Original)">
+                                <i class="fa-solid fa-location-dot text-yellow-400"></i>
+                                <div class="label">🇺🇸 California (1955)</div>
+                            </div>
+                            <div class="pin us-fl" title="Walt Disney World">
+                                <i class="fa-solid fa-location-dot text-yellow-400"></i>
+                                <div class="label">🇺🇸 Florida (1971)</div>
+                            </div>
+                            <div class="pin eu-pa" title="Disneyland Paris">
+                                <i class="fa-solid fa-location-dot text-red-400"></i>
+                                <div class="label">🇫🇷 Paris (1992)</div>
+                            </div>
+                            <div class="pin asia-tk" title="Tokyo Disney Resort">
+                                <i class="fa-solid fa-location-dot text-blue-400"></i>
+                                <div class="label">🇯🇵 Tokyo (1983)</div>
+                            </div>
+                            <div class="pin asia-hk" title="Hong Kong Disneyland">
+                                <i class="fa-solid fa-location-dot text-blue-400"></i>
+                                <div class="label">🇭🇰 Hong Kong (2005)</div>
+                            </div>
+                            <div class="pin asia-sh" title="Shanghai Disney Resort">
+                                <i class="fa-solid fa-location-dot text-red-500 animate-bounce"></i>
+                                <div class="label">🇨🇳 Shanghai (2016)</div>
+                            </div>
+                        </div>
+
+                        <!-- Info Area -->
+                        <div class="w-1/4 flex flex-col gap-4">
+                            <div class="glass p-6 rounded-xl border-l-4 border-blue-500">
+                                <h3 class="text-xl font-bold text-white mb-4"><i
+                                        class="fa-brands fa-fort-awesome mr-2"></i>Global Scale</h3>
+                                <ul class="text-sm text-gray-300 space-y-4">
+                                    <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                        <span>Theme Parks</span>
+                                        <span class="font-bold text-white text-lg">6 Locations</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                        <span>Total Visitors</span>
+                                        <span class="font-bold text-white text-lg">150M+ / yr</span>
+                                    </li>
+                                    <li class="flex justify-between items-center border-b border-white/10 pb-2">
+                                        <span>Hotels</span>
+                                        <span class="font-bold text-white text-lg">55+</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="glass p-6 rounded-xl border-l-4 border-green-500 flex-1">
+                                <h3 class="text-xl font-bold text-white mb-2"><i
+                                        class="fa-solid fa-play mr-2"></i>Digital
+                                    Reach</h3>
+                                <div class="space-y-6 mt-4">
+                                    <div>
+                                        <p class="text-xs text-gray-400 mb-1">Disney+ Service Area</p>
+                                        <p class="text-2xl font-black text-white">160+ Countries</p>
+                                        <div class="w-full bg-gray-700 h-1 mt-2 rounded-full overflow-hidden">
+                                            <div class="bg-green-500 h-full w-[80%]"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-gray-400 mb-1">Total Subscribers</p>
+                                        <p class="text-2xl font-black text-white">150 Million</p>
+                                        <div class="w-full bg-gray-700 h-1 mt-2 rounded-full overflow-hidden">
+                                            <div class="bg-blue-500 h-full w-[70%]"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 통합 컨트롤러 -->
+        <div class="controls">
+            <button class="nav-btn" onclick="prevSlide()" title="이전"><i class="fa-solid fa-chevron-left"></i></button>
+            <span class="page-indicator" id="pageIndicator">1 / 1</span>
+            <button class="nav-btn" onclick="nextSlide()" title="다음"><i class="fa-solid fa-chevron-right"></i></button>
+            <div style="width: 1px; height: 20px; background: rgba(255,255,255,0.2); margin: 0 10px;"></div>
+            <button class="nav-btn" onclick="toggleFullScreen()" title="전체화면"><i
+                    class="fa-solid fa-expand"></i></button>
+        </div>
+
+        <script>
+            let currentIndex = 0;
+            let slides = [];
+
+            function initSlides() {
+                slides = document.querySelectorAll('.slide');
+                scaleSlide();
+            }
+
+            function showSlide(index) { }
+            function nextSlide() { }
+            function prevSlide() { }
+
+            function toggleFullScreen() {
+                if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen();
+                } else {
+                    if (document.exitFullscreen) {
+                        document.exitFullscreen();
+                    }
+                }
+            }
+
+            function scaleSlide() {
+                const container = document.getElementById('slideContainer');
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+                const slideWidth = 1920;
+                const slideHeight = 1080;
+
+                const scale = Math.min(windowWidth / slideWidth, windowHeight / slideHeight);
+                container.style.transform = `scale(${scale})`;
+            }
+
+            window.addEventListener('load', initSlides);
+            window.addEventListener('resize', scaleSlide);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'f' || e.key === 'F') toggleFullScreen();
+            });
+
+        </script>
+</body>
+
+</html>

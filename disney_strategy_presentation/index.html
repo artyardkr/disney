@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Disney Strategy: The Next 100 Years</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/black.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Background Particles -->
+        <div class="particle" style="width: 4px; height: 4px; top: 90%; left: 10%; animation-duration: 15s;"></div>
+        <div class="particle" style="width: 6px; height: 6px; top: 85%; left: 30%; animation-duration: 25s;"></div>
+        <div class="particle" style="width: 3px; height: 3px; top: 95%; left: 70%; animation-duration: 18s;"></div>
+        <div class="particle" style="width: 5px; height: 5px; top: 80%; left: 90%; animation-duration: 22s;"></div>
+
+        <div class="slides">
+
+            <!-- Slide 1: Cinematic Title -->
+            <section data-auto-animate>
+                <div class="title-container">
+                    <div class="title-decoration"></div>
+                    <h3 class="font-serif" style="color: var(--accent-gold); margin-bottom: 20px; font-size: 1.5em;">
+                        Strategic Analysis</h3>
+                    <h1 style="font-size: 5em; line-height: 0.9;">DISNEY<br><span
+                            style="font-size: 0.4em; font-weight: 300; letter-spacing: 10px; color: var(--text-muted);">GLOBAL
+                            STRATEGY</span></h1>
+                    <div style="margin-top: 50px; display: flex; justify-content: center; gap: 20px;">
+                        <span
+                            style="padding: 10px 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 30px; font-size: 0.8em;">2024-2025</span>
+                        <span
+                            style="padding: 10px 20px; background: var(--accent-gold); color: black; border-radius: 30px; font-weight: bold; font-size: 0.8em;">Premium
+                            Report</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 2: The Strategic Conflict (Split Screen) -->
+            <section data-auto-animate>
+                <h2 style="margin-bottom: 60px;">The Strategic <span class="text-gradient-gold">Dilemma</span></h2>
+                <div style="position: relative; width: 100%;">
+                    <div class="vs-badge">VS</div>
+                    <div class="conflict-grid">
+                        <div class="glass-card conflict-item fragment fade-left">
+                            <h3 class="text-gradient-blue">Streaming</h3>
+                            <p class="font-serif" style="font-size: 1.2em; margin: 10px 0;">"Profitability over Growth"
+                            </p>
+                            <ul style="font-size: 0.8em; color: var(--text-muted); margin-top: 20px;">
+                                <li>Market Saturation</li>
+                                <li>Pricing Power</li>
+                                <li>Ad-Tier Monetization</li>
+                            </ul>
+                        </div>
+                        <div class="glass-card conflict-item fragment fade-right" style="text-align: right;">
+                            <h3 class="text-gradient-gold">Experiences</h3>
+                            <p class="font-serif" style="font-size: 1.2em; margin: 10px 0;">"Defending the Kingdom"</p>
+                            <ul
+                                style="font-size: 0.8em; color: var(--text-muted); margin-top: 20px; list-style-position: inside;">
+                                <li>Universal's Epic Universe</li>
+                                <li>$60B Investment Plan</li>
+                                <li>Immersive Storytelling</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Financial Turnaround (Data Viz) -->
+            <section>
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-end; width: 80%; margin-bottom: 30px;">
+                    <h2 style="text-align: left; margin: 0;">Financial<br><span
+                            class="text-gradient-blue">Turnaround</span></h2>
+                    <div style="text-align: right;">
+                        <span style="font-size: 3em; font-weight: 900; color: var(--accent-gold);">+171%</span><br>
+                        <span style="color: var(--text-muted);">Operating Income Growth</span>
+                    </div>
+                </div>
+                <div class="chart-container glass-card">
+                    <canvas id="premiumChart"></canvas>
+                </div>
+            </section>
+
+            <!-- Slide 4: The Ecosystem (Interactive Flywheel) -->
+            <section>
+                <h2
+                    style="position: absolute; top: 50px; left: 50%; transform: translateX(-50%); width: 100%; text-align: center; z-index: 10;">
+                    The Disney <span class="text-gradient-gold">Flywheel</span></h2>
+                <div class="flywheel-container">
+                    <div class="core">
+                        <div class="core-logo">D</div>
+                        <div style="font-size: 0.6em; letter-spacing: 2px;">IP ENGINE</div>
+                    </div>
+
+                    <!-- Inner Orbit -->
+                    <div class="orbit orbit-1">
+                        <div class="planet" style="top: 0; left: 50%;">Movies</div>
+                        <div class="planet" style="top: 100%; left: 50%;">Series</div>
+                        <div class="planet" style="top: 50%; left: 0%;">Music</div>
+                        <div class="planet" style="top: 50%; left: 100%;">Games</div>
+                    </div>
+
+                    <!-- Outer Orbit -->
+                    <div class="orbit orbit-2">
+                        <div class="planet" style="top: 15%; left: 85%;">Theme Parks</div>
+                        <div class="planet" style="top: 85%; left: 15%;">Merchandise</div>
+                        <div class="planet" style="top: 15%; left: 15%;">Cruises</div>
+                        <div class="planet" style="top: 85%; left: 85%;">Licensing</div>
+                    </div>
+                </div>
+                <div class="fragment fade-up"
+                    style="position: absolute; bottom: 50px; width: 100%; text-align: center;">
+                    <p class="font-serif">"An ecosystem that cannot be replicated."</p>
+                </div>
+            </section>
+
+            <!-- Slide 5: Vision -->
+            <section data-background-gradient="linear-gradient(45deg, #000000, #1e1b4b)">
+                <div style="border: 1px solid var(--accent-gold); padding: 60px; position: relative;">
+                    <div
+                        style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); background: #000; padding: 0 20px; color: var(--accent-gold); font-family: 'Montserrat'; font-weight: bold;">
+                        THE VISION</div>
+                    <h1 style="font-size: 3.5em; line-height: 1.2;">"We are not just telling stories.<br>We are <span
+                            class="text-gradient-blue">building worlds</span>."</h1>
+                    <div
+                        style="margin-top: 40px; font-family: 'Playfair Display'; font-style: italic; color: var(--text-muted);">
+                        - The Next 100 Years
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            center: true,
+            margin: 0.1,
+            transition: 'fade',
+            backgroundTransition: 'zoom',
+            autoAnimate: true,
+        });
+
+        // Premium Chart Configuration
+        const ctx = document.getElementById('premiumChart').getContext('2d');
+
+        // Gradient for bars
+        const gradient2023 = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient2023.addColorStop(0, 'rgba(148, 163, 184, 0.8)');
+        gradient2023.addColorStop(1, 'rgba(148, 163, 184, 0.2)');
+
+        const gradient2024 = ctx.createLinearGradient(0, 0, 0, 400);
+        gradient2024.addColorStop(0, '#3b82f6');
+        gradient2024.addColorStop(1, 'rgba(59, 130, 246, 0.2)');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['FY2023', 'FY2024'],
+                datasets: [{
+                    label: 'Operating Income ($M)',
+                    data: [1444, 3923],
+                    backgroundColor: [gradient2023, gradient2024],
+                    borderColor: ['#94a3b8', '#3b82f6'],
+                    borderWidth: 2,
+                    borderRadius: 10,
+                    barThickness: 80
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: 'rgba(0,0,0,0.8)',
+                        titleFont: { family: 'Montserrat' },
+                        bodyFont: { family: 'Inter', size: 14 },
+                        padding: 12,
+                        cornerRadius: 8,
+                        displayColors: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255,255,255,0.1)' },
+                        ticks: { color: '#94a3b8', font: { family: 'Inter' } },
+                        border: { display: false }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#fff', font: { family: 'Montserrat', size: 16, weight: 'bold' } },
+                        border: { display: false }
+                    }
+                },
+                animation: {
+                    duration: 2000,
+                    easing: 'easeOutQuart'
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

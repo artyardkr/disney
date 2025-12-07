@@ -1,0 +1,249 @@
+``html
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Global Strategy - Slide 5</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            max-height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+            background: radial-gradient(circle at 10% 20%, rgb(20, 30, 80) 0%, rgb(10, 15, 40) 90%);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Glassmorphism Card Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+        }
+
+        .highlight-text {
+            background: linear-gradient(to right, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide p-10 flex flex-col justify-between">
+
+        <!-- Header -->
+        <header class="flex justify-between items-end border-b border-white/20 pb-4 mb-4">
+            <div>
+                <h2 class="text-xl text-blue-300 font-medium mb-1"><i class="fa-solid fa-earth-americas mr-2"></i>Global
+                    Expansion</h2>
+                <h1 class="text-4xl font-black tracking-tight">글로벌 디즈니의 발자취</h1>
+            </div>
+            <div class="text-right">
+                <p class="text-sm text-gray-400">Part 1. 기업 소개</p>
+                <p class="text-lg font-bold text-white">05</p>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-12 gap-6 h-full">
+
+            <!-- Left Column: Theme Parks (Offline) - Span 8 -->
+            <div class="col-span-8 flex flex-col gap-4">
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="bg-blue-600 text-xs font-bold px-2 py-1 rounded">OFFLINE</span>
+                    <h3 class="text-xl font-bold">세계 6개 테마파크 리조트</h3>
+                </div>
+
+                <!-- Parks Grid -->
+                <div class="grid grid-cols-2 gap-4 h-full">
+                    <!-- US: California -->
+                    <div class="glass-card p-4 flex flex-col justify-between hover:bg-white/10 transition duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-2xl">🇺🇸</span>
+                                <h4 class="font-bold text-lg mt-1">Disneyland Resort</h4>
+                                <p class="text-xs text-gray-400">California, Anaheim</p>
+                            </div>
+                            <i class="fa-solid fa-star text-yellow-500 text-xs"></i>
+                        </div>
+                        <div class="mt-3 border-t border-white/10 pt-2">
+                            <p class="text-sm"><span class="text-blue-300">1955</span> 최초 개장</p>
+                            <p class="text-xs text-gray-300">연 1,800만 명 방문</p>
+                        </div>
+                    </div>
+
+                    <!-- US: Florida -->
+                    <div class="glass-card p-4 flex flex-col justify-between hover:bg-white/10 transition duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-2xl">🇺🇸</span>
+                                <h4 class="font-bold text-lg mt-1">Walt Disney World</h4>
+                                <p class="text-xs text-gray-400">Florida, Orlando</p>
+                            </div>
+                            <i class="fa-solid fa-crown text-yellow-500 text-xs"></i>
+                        </div>
+                        <div class="mt-3 border-t border-white/10 pt-2">
+                            <p class="text-sm"><span class="text-blue-300">1971</span> 세계 최대 규모</p>
+                            <p class="text-xs text-gray-300">연 5,800만 명 방문</p>
+                        </div>
+                    </div>
+
+                    <!-- Japan -->
+                    <div class="glass-card p-4 flex flex-col justify-between hover:bg-white/10 transition duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-2xl">🇯🇵</span>
+                                <h4 class="font-bold text-lg mt-1">Tokyo Disney</h4>
+                                <p class="text-xs text-gray-400">Japan, Tokyo</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 border-t border-white/10 pt-2">
+                            <p class="text-sm"><span class="text-blue-300">1983</span> 첫 해외 진출</p>
+                            <p class="text-xs text-gray-300">라이선싱 운영 (OLC)</p>
+                        </div>
+                    </div>
+
+                    <!-- France -->
+                    <div class="glass-card p-4 flex flex-col justify-between hover:bg-white/10 transition duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-2xl">🇫🇷</span>
+                                <h4 class="font-bold text-lg mt-1">Disneyland Paris</h4>
+                                <p class="text-xs text-gray-400">France, Paris</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 border-t border-white/10 pt-2">
+                            <p class="text-sm"><span class="text-blue-300">1992</span> 유럽 1위</p>
+                            <p class="text-xs text-gray-300">연 1,500만 명 방문</p>
+                        </div>
+                    </div>
+
+                    <!-- Hong Kong -->
+                    <div class="glass-card p-4 flex flex-col justify-between hover:bg-white/10 transition duration-300">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-2xl">🇭🇰</span>
+                                <h4 class="font-bold text-lg mt-1">HK Disneyland</h4>
+                                <p class="text-xs text-gray-400">Hong Kong</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 border-t border-white/10 pt-2">
+                            <p class="text-sm"><span class="text-blue-300">2005</span> 아시아 거점</p>
+                            <p class="text-xs text-gray-300">정부 합작 (지분 43%)</p>
+                        </div>
+                    </div>
+
+                    <!-- China -->
+                    <div
+                        class="glass-card p-4 flex flex-col justify-between hover:bg-white/10 transition duration-300 border-l-4 border-l-yellow-500">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-2xl">🇨🇳</span>
+                                <h4 class="font-bold text-lg mt-1">Shanghai Disney</h4>
+                                <p class="text-xs text-gray-400">China, Shanghai</p>
+                            </div>
+                            <span class="bg-red-600 text-[10px] px-1 rounded font-bold">HOT</span>
+                        </div>
+                        <div class="mt-3 border-t border-white/10 pt-2">
+                            <p class="text-sm"><span class="text-blue-300">2016</span> 역대 최대 투자</p>
+                            <p class="text-xs text-gray-300">$5.5B 투자 규모</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Digital & Content (Online) - Span 4 -->
+            <div class="col-span-4 flex flex-col gap-6">
+
+                <!-- Disney+ Section -->
+                <div class="glass-card p-6 flex-1 flex flex-col justify-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i class="fa-solid fa-play text-8xl"></i>
+                    </div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <span
+                            class="bg-gradient-to-r from-blue-500 to-cyan-400 text-xs font-bold px-2 py-1 rounded text-black">ONLINE</span>
+                        <h3 class="text-xl font-bold">Disney+ 확장</h3>
+                    </div>
+
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                                <i class="fa-solid fa-globe"></i>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold highlight-text">160+</p>
+                                <p class="text-xs text-gray-300">서비스 국가</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold highlight-text">1.5억 명</p>
+                                <p class="text-xs text-gray-300">글로벌 구독자 (2023)</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <div>
+                                <p class="text-lg font-bold">2019. 11</p>
+                                <p class="text-xs text-gray-300">서비스 런칭</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content Power -->
+                <div class="glass-card p-5 h-1/3 flex flex-col justify-center">
+                    <h3 class="text-lg font-bold mb-2"><i class="fa-solid fa-film mr-2 text-yellow-500"></i>콘텐츠 파워</h3>
+                    <div class="space-y-2 text-sm text-gray-300">
+                        <p class="flex justify-between border-b border-white/10 pb-1">
+                            <span>박스오피스 점유율</span>
+                            <span class="font-bold text-white">세계 1위</span>
+                        </p>
+                        <p class="flex justify-between border-b border-white/10 pb-1">
+                            <span>콘텐츠 유통</span>
+                            <span class="font-bold text-white">200개국+</span>
+                        </p>
+                        <p class="flex justify-between">
+                            <span>언어 지원</span>
+                            <span class="font-bold text-white">40개 언어</span>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+```

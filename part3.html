@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Case Studies (Slide 14-19)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Oswald:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        /* 테마 설정 */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #050505;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide-container {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.2);
+            background: radial-gradient(circle at 50% 120%, #1e1b4b, #020617);
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        /* 유틸리티 */
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 이미지 플레이스홀더 */
+        .img-box {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-box:hover {
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* 배경 별빛 효과 */
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(1px 1px at 20px 30px, #fff, transparent), radial-gradient(2px 2px at 100px 50px, #fff, transparent);
+            background-size: 300px 300px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        /* 네비게이션 */
+        .nav-btn {
+            position: fixed;
+            bottom: 30px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+        }
+
+        .prev-btn {
+            right: 100px;
+        }
+
+        .next-btn {
+            right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide-container">
+        <div class="stars"></div>
+
+        <!-- ==================== SLIDE 14: Shanghai Disney (Success 1) ==================== -->
+        <div class="slide active" id="slide14">
+            <div class="h-full flex relative">
+                <!-- Left: Full Image Area -->
+                <div class="w-1/2 h-full relative group">
+                    <div class="img-box w-full h-full border-none bg-gray-900">
+                        <i class="fa-solid fa-place-of-worship text-6xl text-gray-700 mb-4"></i>
+                        <span class="text-gray-400">상하이 디즈니 캐슬 이미지</span>
+                    </div>
+                    <!-- Overlay Gradient -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-black/50 to-[#020617]"></div>
+                    <div class="absolute bottom-12 left-12">
+                        <div class="bg-red-600 text-white text-xs font-bold px-3 py-1 inline-block mb-2 rounded">SUCCESS
+                            CASE 1</div>
+                        <h2 class="text-5xl font-bold text-white font-serif mb-2">Shanghai<br>Disney Resort</h2>
+                        <p class="text-yellow-500 italic">"Think Global, Act Chinese"</p>
+                    </div>
+                </div>
+
+                <!-- Right: Content -->
+                <div class="w-1/2 h-full p-12 flex flex-col justify-center relative z-10">
+                    <div class="absolute top-12 right-12 text-6xl font-black text-white/5 font-oswald">14</div>
+
+                    <h3 class="text-2xl font-bold text-white mb-6 border-l-4 border-yellow-500 pl-4">Success Strategy
+                    </h3>
+
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="glass p-4 rounded-xl hover:bg-red-900/20 transition border-t-2 border-red-500">
+                            <i class="fa-solid fa-archway text-red-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white">Culture</h4>
+                            <p class="text-xs text-gray-400">12 Zodiacs, Chinese Garden</p>
+                        </div>
+                        <div
+                            class="glass p-4 rounded-xl hover:bg-yellow-900/20 transition border-t-2 border-yellow-500">
+                            <i class="fa-solid fa-utensils text-yellow-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white">Food</h4>
+                            <p class="text-xs text-gray-400">Local Cuisine (80% Menu)</p>
+                        </div>
+                        <div class="glass p-4 rounded-xl hover:bg-blue-900/20 transition border-t-2 border-blue-500">
+                            <i class="fa-solid fa-handshake text-blue-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white">Partnership</h4>
+                            <p class="text-xs text-gray-400">Gov. Support & Infra</p>
+                        </div>
+                        <div class="glass p-4 rounded-xl hover:bg-green-900/20 transition border-t-2 border-green-500">
+                            <i class="fa-solid fa-chart-line text-green-400 text-xl mb-2"></i>
+                            <h4 class="font-bold text-white">Result</h4>
+                            <p class="text-xs text-gray-400">11M Visitors (1st Year)</p>
+                        </div>
+                    </div>
+
+                    <div class="glass p-6 rounded-xl border border-white/10">
+                        <p class="text-gray-400 text-xs uppercase mb-2">Key Factor</p>
+                        <p class="text-lg text-white font-light">"16년의 협상과 인내, 그리고 <span
+                                class="text-yellow-500 font-bold">문화에 대한 깊은 존중</span>이 만든 기적"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 15: Marvel (Success 2) ==================== -->
+        <div class="slide" id="slide15">
+            <div class="h-full flex flex-col p-12 relative">
+                <!-- Header -->
+                <div class="flex justify-between items-end mb-6">
+                    <div>
+                        <span
+                            class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded mb-2 inline-block">SUCCESS
+                            CASE 2</span>
+                        <h2 class="text-5xl font-bold text-white font-oswald uppercase">Marvel Cinematic Universe</h2>
+                    </div>
+                    <div class="text-6xl font-black text-white/5 font-oswald">15</div>
+                </div>
+
+                <!-- Hero Banner Placeholder -->
+                <div
+                    class="w-full h-32 img-box rounded-xl mb-8 border-red-600/30 bg-gradient-to-r from-red-900/20 to-black">
+                    <span class="text-red-500 font-bold tracking-widest">MARVEL HEROES IMAGE BANNER</span>
+                </div>
+
+                <!-- Timeline & Stats -->
+                <div class="grid grid-cols-12 gap-8 h-full">
+                    <!-- Left: Timeline (Span 8) -->
+                    <div class="col-span-8 flex flex-col justify-between">
+                        <div class="relative pl-8 border-l-2 border-red-600/30 space-y-8">
+                            <!-- Phase 1 -->
+                            <div class="relative">
+                                <div
+                                    class="absolute -left-[39px] w-5 h-5 bg-red-600 rounded-full border-4 border-black">
+                                </div>
+                                <h4 class="text-white font-bold text-xl">Phase 1: Origins</h4>
+                                <p class="text-gray-400 text-sm">Iron Man, Avengers Assemble ($3.8B)</p>
+                            </div>
+                            <!-- Phase 2 -->
+                            <div class="relative">
+                                <div
+                                    class="absolute -left-[39px] w-5 h-5 bg-red-600 rounded-full border-4 border-black">
+                                </div>
+                                <h4 class="text-white font-bold text-xl">Phase 2: Expansion</h4>
+                                <p class="text-gray-400 text-sm">Guardians of Galaxy, Ant-Man ($5.3B)</p>
+                            </div>
+                            <!-- Phase 3 -->
+                            <div class="relative">
+                                <div
+                                    class="absolute -left-[39px] w-5 h-5 bg-yellow-500 rounded-full border-4 border-black shadow-[0_0_15px_yellow]">
+                                </div>
+                                <h4 class="text-yellow-400 font-bold text-xl">Phase 3: Peak</h4>
+                                <p class="text-gray-400 text-sm">Endgame, Black Panther ($13.5B)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: ROI Box (Span 4) -->
+                    <div class="col-span-4 flex flex-col gap-4">
+                        <div class="glass p-6 rounded-2xl border-t-4 border-red-600 text-center">
+                            <p class="text-gray-400 text-sm">Acquisition Cost (2009)</p>
+                            <p class="text-3xl font-bold text-white line-through decoration-red-600">$4.0 B</p>
+                            <div class="my-2 text-2xl text-gray-500"><i class="fa-solid fa-arrow-down"></i></div>
+                            <p class="text-gray-400 text-sm">Current Value (2023)</p>
+                            <p class="text-5xl font-black text-yellow-400 font-oswald glow-text">$200 B+</p>
+                            <p class="text-xs text-green-400 mt-2">50x ROI (Return on Investment)</p>
+                        </div>
+                        <div class="glass p-4 rounded-xl text-center">
+                            <p class="text-sm text-gray-300">"좋은 IP를 인수하는 것보다,<br>잘 키우는 것이 중요하다"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 16: Euro Disney (Challenge 1) ==================== -->
+        <div class="slide" id="slide16">
+            <div class="h-full flex relative">
+                <!-- Center Split Line -->
+                <div class="absolute left-1/2 top-0 bottom-0 w-px bg-white/10 z-0"></div>
+                <div class="absolute top-12 right-12 text-6xl font-black text-white/5 font-oswald">16</div>
+
+                <!-- Left: Failure (Red) -->
+                <div
+                    class="w-1/2 h-full p-12 flex flex-col justify-center relative z-10 bg-gradient-to-r from-red-900/10 to-transparent">
+                    <div class="mb-8">
+                        <span
+                            class="bg-red-600/20 text-red-400 border border-red-600/50 text-xs font-bold px-3 py-1 rounded">CHALLENGE
+                            CASE</span>
+                        <h2 class="text-4xl font-bold text-white mt-2">Euro Disney<br><span
+                                class="text-red-500 text-2xl">The Cultural Failure (1992)</span></h2>
+                    </div>
+
+                    <ul class="space-y-4">
+                        <li class="glass p-4 rounded-xl border-l-4 border-red-500">
+                            <h4 class="text-red-400 font-bold mb-1"><i class="fa-solid fa-ban mr-2"></i>No Alcohol</h4>
+                            <p class="text-xs text-gray-300">Ignored French wine culture</p>
+                        </li>
+                        <li class="glass p-4 rounded-xl border-l-4 border-red-500">
+                            <h4 class="text-red-400 font-bold mb-1"><i class="fa-solid fa-burger mr-2"></i>US Food Only
+                            </h4>
+                            <p class="text-xs text-gray-300">Lack of local cuisine</p>
+                        </li>
+                        <li class="glass p-4 rounded-xl border-l-4 border-red-500">
+                            <h4 class="text-red-400 font-bold mb-1"><i class="fa-solid fa-user-tie mr-2"></i>Strict
+                                Rules</h4>
+                            <p class="text-xs text-gray-300">Employee dress code conflict</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Center: Transformation Icon -->
+                <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
+                    <div
+                        class="w-16 h-16 rounded-full bg-black border border-white/20 flex items-center justify-center text-2xl text-white">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+
+                <!-- Right: Success (Green) -->
+                <div
+                    class="w-1/2 h-full p-12 flex flex-col justify-center relative z-10 bg-gradient-to-l from-green-900/10 to-transparent pl-16">
+                    <div class="mb-8 text-right">
+                        <h2 class="text-4xl font-bold text-white mt-2">Disneyland Paris<br><span
+                                class="text-green-500 text-2xl">The Adaptation (Present)</span></h2>
+                    </div>
+
+                    <ul class="space-y-4">
+                        <li class="glass p-4 rounded-xl border-r-4 border-green-500 text-right">
+                            <h4 class="text-green-400 font-bold mb-1">Local Adaptation <i
+                                    class="fa-solid fa-wine-glass ml-2"></i></h4>
+                            <p class="text-xs text-gray-300">Wine allowed, French cuisine added</p>
+                        </li>
+                        <li class="glass p-4 rounded-xl border-r-4 border-green-500 text-right">
+                            <h4 class="text-green-400 font-bold mb-1">Pricing Strategy <i
+                                    class="fa-solid fa-tag ml-2"></i></h4>
+                            <p class="text-xs text-gray-300">Flexible pricing & discounts</p>
+                        </li>
+                        <li class="glass p-4 rounded-xl border-r-4 border-green-500 text-right">
+                            <h4 class="text-green-400 font-bold mb-1">Result <i class="fa-solid fa-trophy ml-2"></i>
+                            </h4>
+                            <p class="text-xs text-gray-300">#1 Tourist Destination in Europe</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 17: Streaming Wars (Challenge 2) ==================== -->
+        <div class="slide" id="slide17">
+            <div class="h-full flex flex-col p-12">
+                <div class="flex justify-between items-end mb-8">
+                    <div>
+                        <span
+                            class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded mb-2 inline-block">CHALLENGE
+                            CASE 2</span>
+                        <h2 class="text-5xl font-bold text-white">Streaming Wars</h2>
+                        <p class="text-blue-300 italic">Latecomer's Challenge</p>
+                    </div>
+                    <div class="text-6xl font-black text-white/5 font-oswald">17</div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-8 h-full">
+                    <!-- Comparison Table -->
+                    <div class="glass p-6 rounded-2xl">
+                        <h3 class="text-xl font-bold text-white mb-6">Head to Head</h3>
+                        <div class="grid grid-cols-3 gap-4 text-center text-sm mb-4 pb-4 border-b border-white/10">
+                            <div class="text-gray-400">Metric</div>
+                            <div class="text-red-500 font-bold">Netflix</div>
+                            <div class="text-blue-400 font-bold">Disney+</div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-center text-sm mb-4">
+                            <div class="text-gray-300">Launch</div>
+                            <div class="text-white">2007</div>
+                            <div class="text-white">2019</div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-center text-sm mb-4">
+                            <div class="text-gray-300">Subs</div>
+                            <div class="text-white font-bold">247M</div>
+                            <div class="text-white font-bold">150M</div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-4 text-center text-sm mb-4">
+                            <div class="text-gray-300">Profit</div>
+                            <div class="text-green-400">Profitable</div>
+                            <div class="text-red-400">Deficit (Improving)</div>
+                        </div>
+                    </div>
+
+                    <!-- Financial Chart (Simplified) -->
+                    <div class="glass p-6 rounded-2xl flex flex-col justify-end">
+                        <h3 class="text-xl font-bold text-white mb-4">Investment vs Loss</h3>
+                        <div class="flex items-end gap-6 h-64 pb-4 border-b border-white/20">
+                            <!-- 2020 -->
+                            <div class="flex-1 flex flex-col justify-end items-center group">
+                                <div class="text-xs text-red-400 mb-1 opacity-0 group-hover:opacity-100">-$2.8B</div>
+                                <div class="w-full bg-red-500/50 rounded-t-sm h-[60%]"></div>
+                                <div class="text-xs text-gray-400 mt-2">2020</div>
+                            </div>
+                            <!-- 2021 -->
+                            <div class="flex-1 flex flex-col justify-end items-center group">
+                                <div class="text-xs text-red-400 mb-1 opacity-0 group-hover:opacity-100">-$1.5B</div>
+                                <div class="w-full bg-red-500/50 rounded-t-sm h-[40%]"></div>
+                                <div class="text-xs text-gray-400 mt-2">2021</div>
+                            </div>
+                            <!-- 2022 -->
+                            <div class="flex-1 flex flex-col justify-end items-center group">
+                                <div class="text-xs text-red-400 mb-1 opacity-0 group-hover:opacity-100">-$1.5B</div>
+                                <div class="w-full bg-red-500/50 rounded-t-sm h-[40%]"></div>
+                                <div class="text-xs text-gray-400 mt-2">2022</div>
+                            </div>
+                            <!-- 2024 (Target) -->
+                            <div class="flex-1 flex flex-col justify-end items-center group">
+                                <div class="text-xs text-green-400 mb-1 opacity-0 group-hover:opacity-100">Profit</div>
+                                <div class="w-full bg-green-500/50 rounded-t-sm h-[10%]"></div>
+                                <div class="text-xs text-white font-bold mt-2">2024(E)</div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-4 text-center">"Short-term Pain for Long-term Gain"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 18: SWOT Analysis ==================== -->
+        <div class="slide" id="slide18">
+            <div class="h-full flex flex-col p-12 relative">
+                <div class="text-center mb-8">
+                    <h2 class="text-4xl font-bold text-white">SWOT Analysis</h2>
+                    <p class="text-gray-400">Strategic Position</p>
+                </div>
+                <div class="absolute top-12 right-12 text-6xl font-black text-white/5 font-oswald">18</div>
+
+                <div class="flex-1 grid grid-cols-2 grid-rows-2 gap-4 relative">
+                    <!-- Center Logo -->
+                    <div
+                        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-black rounded-full border border-white/20 flex items-center justify-center z-20 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                        <span class="text-xs font-bold text-white">DISNEY</span>
+                    </div>
+
+                    <!-- Strengths -->
+                    <div class="glass p-6 rounded-2xl border-t-4 border-blue-500 hover:bg-blue-900/10 transition">
+                        <h3 class="text-xl font-bold text-blue-400 mb-4">Strengths</h3>
+                        <ul class="text-sm text-gray-300 space-y-2 list-disc pl-4">
+                            <li>100-Year Brand Power</li>
+                            <li>Unrivaled IP Portfolio (Marvel, Star Wars)</li>
+                            <li>Diversified Revenue (Park + Media)</li>
+                        </ul>
+                    </div>
+                    <!-- Weaknesses -->
+                    <div class="glass p-6 rounded-2xl border-t-4 border-red-500 hover:bg-red-900/10 transition">
+                        <h3 class="text-xl font-bold text-red-400 mb-4">Weaknesses</h3>
+                        <ul class="text-sm text-gray-300 space-y-2 list-disc pl-4">
+                            <li>High Operating Costs</li>
+                            <li>Streaming Deficit ($5.8B+)</li>
+                            <li>China Market Dependency</li>
+                        </ul>
+                    </div>
+                    <!-- Opportunities -->
+                    <div class="glass p-6 rounded-2xl border-t-4 border-green-500 hover:bg-green-900/10 transition">
+                        <h3 class="text-xl font-bold text-green-400 mb-4">Opportunities</h3>
+                        <ul class="text-sm text-gray-300 space-y-2 list-disc pl-4">
+                            <li>Emerging Markets (India, SEA)</li>
+                            <li>Metaverse & AI Content</li>
+                            <li>New IP Development</li>
+                        </ul>
+                    </div>
+                    <!-- Threats -->
+                    <div class="glass p-6 rounded-2xl border-t-4 border-orange-500 hover:bg-orange-900/10 transition">
+                        <h3 class="text-xl font-bold text-orange-400 mb-4">Threats</h3>
+                        <ul class="text-sm text-gray-300 space-y-2 list-disc pl-4">
+                            <li>Streaming Competition (Netflix)</li>
+                            <li>Economic Recession</li>
+                            <li>Geopolitical Risks</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== SLIDE 19: Global Timeline ==================== -->
+        <div class="slide" id="slide19">
+            <div class="h-full flex flex-col p-12">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <p class="text-purple-400 font-serif italic mb-2">100 Years Journey</p>
+                        <h2 class="text-5xl font-bold text-white">Global Expansion Timeline</h2>
+                    </div>
+                    <div class="text-6xl font-black text-white/5 font-oswald">19</div>
+                </div>
+
+                <div class="relative flex-1 flex items-center">
+                    <!-- Horizontal Line -->
+                    <div class="absolute left-0 right-0 h-1 bg-white/20 top-1/2 transform -translate-y-1/2"></div>
+
+                    <!-- Timeline Items -->
+                    <div class="w-full flex justify-between relative z-10">
+
+                        <!-- 1955 -->
+                        <div class="flex flex-col items-center group">
+                            <div
+                                class="mb-4 p-3 glass rounded-lg opacity-0 group-hover:opacity-100 transition absolute bottom-12 w-32 text-center border-t-2 border-gray-400">
+                                <span class="text-xs text-white">Disneyland (CA)</span>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-gray-400 border-4 border-black"></div>
+                            <div class="mt-4 text-center">
+                                <div class="text-xl font-bold text-gray-400">1955</div>
+                                <div class="text-xs text-gray-500">Domestic</div>
+                            </div>
+                        </div>
+
+                        <!-- 1983 -->
+                        <div class="flex flex-col items-center group">
+                            <div
+                                class="mb-4 p-3 glass rounded-lg opacity-100 transition absolute bottom-12 w-32 text-center border-t-2 border-blue-400">
+                                <span class="text-xs text-white">Tokyo Disney</span>
+                            </div>
+                            <div class="w-5 h-5 rounded-full bg-blue-400 border-4 border-black shadow-[0_0_10px_blue]">
+                            </div>
+                            <div class="mt-4 text-center">
+                                <div class="text-xl font-bold text-blue-400">1983</div>
+                                <div class="text-xs text-blue-300">Global Start</div>
+                            </div>
+                        </div>
+
+                        <!-- 1992 -->
+                        <div class="flex flex-col items-center group">
+                            <div
+                                class="mb-4 p-3 glass rounded-lg opacity-0 group-hover:opacity-100 transition absolute bottom-12 w-32 text-center border-t-2 border-red-400">
+                                <span class="text-xs text-white">Euro Disney</span>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-red-400 border-4 border-black"></div>
+                            <div class="mt-4 text-center">
+                                <div class="text-xl font-bold text-red-400">1992</div>
+                                <div class="text-xs text-red-300">Europe</div>
+                            </div>
+                        </div>
+
+                        <!-- 2009 -->
+                        <div class="flex flex-col items-center group">
+                            <div
+                                class="mb-4 p-3 glass rounded-lg opacity-100 transition absolute bottom-12 w-32 text-center border-t-2 border-yellow-400">
+                                <span class="text-xs text-white">Marvel Acq.</span>
+                            </div>
+                            <div
+                                class="w-5 h-5 rounded-full bg-yellow-400 border-4 border-black shadow-[0_0_10px_yellow]">
+                            </div>
+                            <div class="mt-4 text-center">
+                                <div class="text-xl font-bold text-yellow-400">2009</div>
+                                <div class="text-xs text-yellow-300">IP Expansion</div>
+                            </div>
+                        </div>
+
+                        <!-- 2016 -->
+                        <div class="flex flex-col items-center group">
+                            <div
+                                class="mb-4 p-3 glass rounded-lg opacity-0 group-hover:opacity-100 transition absolute bottom-12 w-32 text-center border-t-2 border-green-400">
+                                <span class="text-xs text-white">Shanghai</span>
+                            </div>
+                            <div class="w-4 h-4 rounded-full bg-green-400 border-4 border-black"></div>
+                            <div class="mt-4 text-center">
+                                <div class="text-xl font-bold text-green-400">2016</div>
+                                <div class="text-xs text-green-300">China</div>
+                            </div>
+                        </div>
+
+                        <!-- 2019 -->
+                        <div class="flex flex-col items-center group">
+                            <div
+                                class="mb-4 p-3 glass rounded-lg opacity-100 transition absolute bottom-12 w-32 text-center border-t-2 border-purple-400">
+                                <span class="text-xs text-white">Disney+</span>
+                            </div>
+                            <div
+                                class="w-5 h-5 rounded-full bg-purple-400 border-4 border-black shadow-[0_0_10px_purple]">
+                            </div>
+                            <div class="mt-4 text-center">
+                                <div class="text-xl font-bold text-purple-400">2019</div>
+                                <div class="text-xs text-purple-300">Digital</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 네비게이션 버튼 -->
+    <button class="nav-btn prev-btn" onclick="prevSlide()"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="nav-btn next-btn" onclick="nextSlide()"><i class="fa-solid fa-chevron-right"></i></button>
+
+    <script>
+        let currentSlide = 14;
+        const totalSlides = 19;
+        const startSlide = 14;
+
+        function showSlide(n) {
+            document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
+
+            if (n > totalSlides) currentSlide = startSlide;
+            else if (n < startSlide) currentSlide = totalSlides;
+            else currentSlide = n;
+
+            document.getElementById('slide' + currentSlide).classList.add('active');
+        }
+
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'ArrowRight') nextSlide();
+            if (event.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+
+</html>

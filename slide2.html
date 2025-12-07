@@ -1,0 +1,252 @@
+```html
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disney Key Metrics - Slide 6</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: white;
+        }
+
+        /* 이미지 플레이스홀더 스타일 */
+        .img-placeholder {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .img-placeholder:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.6);
+            color: white;
+        }
+
+        /* 테이블 스타일 */
+        .data-table th {
+            font-weight: 400;
+            color: #94a3b8;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .data-table td {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .bar-bg {
+            background: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slide p-12 flex flex-col">
+
+        <!-- Header -->
+        <header class="flex justify-between items-end mb-8">
+            <div>
+                <h2 class="text-xl text-yellow-500 font-medium mb-1">Performance & Growth</h2>
+                <h1 class="text-4xl font-black tracking-tight">숫자로 보는 디즈니 (2023)</h1>
+            </div>
+            <!-- 로고 플레이스홀더 -->
+            <div class="img-placeholder w-32 h-12 rounded">
+                <span class="text-xs"><i class="fa-solid fa-image mr-1"></i>로고 삽입</span>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-12 gap-8 h-full">
+
+            <!-- Left Column: Financial Data Table (Span 7) -->
+            <div class="col-span-7 flex flex-col gap-6">
+
+                <!-- Key Numbers Cards -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-5 rounded-xl border border-white/10">
+                        <div class="text-gray-400 text-sm mb-1">연간 매출 (Revenue)</div>
+                        <div class="text-4xl font-bold text-white">$88.9 B</div>
+                        <div class="text-green-400 text-sm mt-2"><i class="fa-solid fa-arrow-trend-up mr-1"></i>전년 대비
+                            +7%</div>
+                    </div>
+                    <div class="bg-white/5 p-5 rounded-xl border border-white/10">
+                        <div class="text-gray-400 text-sm mb-1">시가총액 (Market Cap)</div>
+                        <div class="text-4xl font-bold text-white">$201 B+</div>
+                        <div class="text-blue-400 text-sm mt-2">업계 1위 유지</div>
+                    </div>
+                </div>
+
+                <!-- 5-Year Revenue Trend Table & Chart -->
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 flex-1">
+                    <h3 class="text-lg font-bold mb-4 border-l-4 border-blue-500 pl-3">최근 5개년 매출 추이</h3>
+                    <table class="w-full data-table text-sm">
+                        <thead>
+                            <tr>
+                                <th class="text-left w-16">Year</th>
+                                <th class="text-left w-24">Revenue</th>
+                                <th class="text-left">Growth Trend</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2019</td>
+                                <td class="font-bold">$69.6 B</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="bar-bg w-full">
+                                            <div class="bar-fill" style="width: 78%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2020</td>
+                                <td class="font-bold text-red-300">$65.4 B</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="bar-bg w-full">
+                                            <div class="bar-fill bg-red-500" style="width: 73%; background: #ef4444;">
+                                            </div>
+                                        </div>
+                                        <span class="text-xs text-red-400">COVID-19</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2021</td>
+                                <td class="font-bold">$67.4 B</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="bar-bg w-full">
+                                            <div class="bar-fill" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2022</td>
+                                <td class="font-bold">$82.7 B</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="bar-bg w-full">
+                                            <div class="bar-fill" style="width: 92%"></div>
+                                        </div>
+                                        <span class="text-xs text-green-400">회복세</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-yellow-400">2023</td>
+                                <td class="font-bold text-yellow-400">$88.9 B</td>
+                                <td>
+                                    <div class="flex items-center gap-3">
+                                        <div class="bar-bg w-full">
+                                            <div class="bar-fill" style="width: 100%; background: #eab308;"></div>
+                                        </div>
+                                        <span class="text-xs text-yellow-400">최고치</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Right Column: Images & Segment Data (Span 5) -->
+            <div class="col-span-5 flex flex-col gap-6">
+
+                <!-- 이미지 삽입 영역 1: 대표 이미지 (영화 포스터나 테마파크 전경) -->
+                <div class="img-placeholder w-full h-48 rounded-xl relative overflow-hidden group">
+                    <i class="fa-solid fa-camera text-3xl mb-2"></i>
+                    <span class="font-bold">대표 이미지 삽입 영역</span>
+                    <span class="text-xs mt-1">(예: 디즈니 캐슬, 최신 영화 포스터)</span>
+
+                    <!-- 사용자가 이미지를 넣었을 때를 가정한 예시 코드 (주석 처리됨) -->
+                    <!-- <img src="your-image.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Representative"> -->
+                </div>
+
+                <!-- Business Segment Pie Chart Alternative (List style) -->
+                <div class="bg-white/5 p-6 rounded-xl border border-white/10 flex-1">
+                    <h3 class="text-lg font-bold mb-4">사업 부문별 매출 비중</h3>
+
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Entertainment (영화/스트리밍)</span>
+                                <span class="font-bold text-blue-400">45%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 45%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Parks & Experiences</span>
+                                <span class="font-bold text-green-400">32%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 32%; background: #4ade80;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>ESPN (스포츠)</span>
+                                <span class="font-bold text-red-400">23%</span>
+                            </div>
+                            <div class="bar-bg">
+                                <div class="bar-fill" style="width: 23%; background: #f87171;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 이미지 삽입 영역 2: 관련 작은 이미지 -->
+                    <div class="img-placeholder w-full h-24 mt-6 rounded-lg">
+                        <span class="text-xs"><i class="fa-solid fa-image mr-1"></i>관련 자료 사진 (선택사항)</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+```
