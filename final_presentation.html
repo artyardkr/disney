@@ -276,7 +276,7 @@
                     </div>
                     <div class="text-left">
                         <p class="text-xs text-gray-500 uppercase font-bold mb-1">Presented By</p>
-                        <p class="text-xl font-bold text-white">김규민 김시은 문세은</p>
+                        <p class="text-xl font-bold text-white">김규민 김시은 문세연</p>
                         <p class="text-xl font-bold text-white">송성원 하동욱</p>
                     </div>
                 </div>
@@ -920,12 +920,12 @@
                             </div>
                         </div>
 
-                        <div class="mt-32 text-center">
+                        <div class="mt-48 text-center relative z-40">
                             <p
-                                class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+                                class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 drop-shadow-sm">
                                 Retention 80%
                             </p>
-                            <p class="text-xs text-gray-400">Bundle 3-Month Retention Rate</p>
+                            <p class="text-sm text-gray-300 font-bold mt-2">Bundle 3-Month Retention Rate</p>
                         </div>
                     </div>
                 </div>
@@ -1400,7 +1400,7 @@
                         <div class="space-y-4 text-sm text-gray-300 border-t border-white/10 pt-4">
                             <div class="flex justify-between">
                                 <span>Example</span>
-                                <span class="font-bold text-white">파리(Paris) / 홍콩(HK)</span>
+                                <span class="font-bold text-white">파리(1992) /상하이 /홍콩</span>
                             </div>
                             <div class="flex justify-between">
                                 <span>Equity (지분)</span>
@@ -1408,7 +1408,7 @@
                             </div>
                             <div class="flex justify-between">
                                 <span>Profit</span>
-                                <span class="font-bold text-white">배당금 (Dividend)</span>
+                                <span class="font-bold text-white">배당금 + 경영 수수료</span>
                             </div>
                         </div>
                     </div>
@@ -1426,15 +1426,15 @@
                         <div class="space-y-4 text-sm text-gray-300 border-t border-white/10 pt-4">
                             <div class="flex justify-between">
                                 <span>Example</span>
-                                <span class="font-bold text-white">상하이 (Shanghai, 2016)</span>
+                                <span class="font-bold text-white">파리 (완전인수/2017)</span>
                             </div>
                             <div class="flex justify-between">
-                                <span>Investment</span>
-                                <span class="font-bold text-white">$5.5 Billion</span>
+                                <span>Equity(지분)</span>
+                                <span class="font-bold text-white">100%</span>
                             </div>
                             <div class="flex justify-between">
                                 <span>Strategy</span>
-                                <span class="font-bold text-white">철저한 현지화 (Glocal)</span>
+                                <span class="font-bold text-white">도쿄의 '잃어버린 수익' 교훈 반영</span>
                             </div>
                         </div>
                     </div>
@@ -2009,27 +2009,60 @@
 
                 <div class="grid grid-cols-2 gap-8 h-full">
                     <!-- Comparison Table -->
-                    <div class="glass p-6 rounded-2xl">
+                    <div class="glass p-6 rounded-2xl flex flex-col justify-center h-full">
                         <h3 class="text-xl font-bold text-white mb-6">Head to Head</h3>
-                        <div class="grid grid-cols-3 gap-4 text-center text-sm mb-4 pb-4 border-b border-white/10">
-                            <div class="text-gray-400">Metric</div>
-                            <div class="text-red-500 font-bold">Netflix</div>
-                            <div class="text-blue-400 font-bold">Disney+</div>
+
+                        <!-- Header -->
+                        <div
+                            class="grid grid-cols-[80px_1fr_1fr] gap-4 text-center text-sm mb-4 pb-4 border-b border-white/10">
+                            <div class="text-gray-400 font-bold self-center">Metric</div>
+                            <div class="text-red-500 font-bold text-lg">Netflix</div>
+                            <div class="text-blue-400 font-bold text-lg">Disney+</div>
                         </div>
-                        <div class="grid grid-cols-3 gap-4 text-center text-sm mb-4">
-                            <div class="text-gray-300">Launch</div>
-                            <div class="text-white">2007</div>
-                            <div class="text-white">2019</div>
-                        </div>
-                        <div class="grid grid-cols-3 gap-4 text-center text-sm mb-4">
-                            <div class="text-gray-300">Subs</div>
-                            <div class="text-white font-bold">247M</div>
-                            <div class="text-white font-bold">150M</div>
-                        </div>
-                        <div class="grid grid-cols-3 gap-4 text-center text-sm mb-4">
-                            <div class="text-gray-300">Profit</div>
-                            <div class="text-green-400">Profitable</div>
-                            <div class="text-red-400">Deficit (Improving)</div>
+
+                        <!-- Content Rows -->
+                        <div class="space-y-6 text-sm">
+                            <!-- Launch -->
+                            <div class="grid grid-cols-[80px_1fr_1fr] gap-4 items-start">
+                                <div class="text-gray-300 font-bold text-xs pt-1">Launch<br>(출범)</div>
+                                <div class="text-white">2007년<br><span class="text-xs text-gray-500">(스트리밍 서비스
+                                        시작)</span></div>
+                                <div class="text-white">2019년 11월</div>
+                            </div>
+
+                            <!-- Subscribers -->
+                            <div class="grid grid-cols-[80px_1fr_1fr] gap-4 items-start">
+                                <div class="text-gray-300 font-bold text-xs pt-1">Subscribers<br>(가입자)</div>
+                                <div class="text-white font-bold">약 3억 160만 명<br><span
+                                        class="text-xs text-gray-500 font-normal">(추정치, 집계 중단)</span></div>
+                                <div class="text-white font-bold">1억 9,600만 명<br><span
+                                        class="text-xs text-blue-400 font-normal">(전체 합산 기준)</span></div>
+                            </div>
+
+                            <!-- Market Position -->
+                            <div class="grid grid-cols-[80px_1fr_1fr] gap-4 items-start">
+                                <div class="text-gray-300 font-bold text-xs pt-1">Position<br>(지위)</div>
+                                <div class="text-white">압도적 1위<br><span class="text-xs text-gray-500">단일 플랫폼 최대
+                                        점유율</span></div>
+                                <div class="text-white">강력한 2위<br><span class="text-xs text-blue-400">번들 전략으로 방어</span>
+                                </div>
+                            </div>
+
+                            <!-- Profitability -->
+                            <div class="grid grid-cols-[80px_1fr_1fr] gap-4 items-start">
+                                <div class="text-gray-300 font-bold text-xs pt-1">Profit<br>(수익성)</div>
+                                <div class="text-green-400 font-bold">초고수익 (Cash Cow)<br><span
+                                        class="text-xs text-gray-500 font-normal">영업이익 100억불+</span></div>
+                                <div class="text-blue-400 font-bold">✅ 연간 흑자 달성<br><span
+                                        class="text-xs text-blue-400/70 font-normal">영업이익 13억불+</span></div>
+                            </div>
+
+                            <!-- Key Strength -->
+                            <div class="grid grid-cols-[80px_1fr_1fr] gap-4 items-start">
+                                <div class="text-gray-300 font-bold text-xs pt-1">Key Strength<br>(강점)</div>
+                                <div class="text-white text-xs">글로벌 히트작 &<br>강력한 알고리즘 (Lock-in)</div>
+                                <div class="text-white text-xs">막강한 IP &<br>팬덤 생태계 연계</div>
+                            </div>
                         </div>
                     </div>
 
@@ -2037,12 +2070,12 @@
                     <!-- Financial Chart (Detailed Operating Income) -->
                     <div class="glass p-6 rounded-2xl flex flex-col justify-end h-full">
                         <h3 class="text-xl font-bold text-white mb-6 flex justify-between items-end">
-                            Operating Income/Loss Trend
+                            영업이익/손실 추세
                             <span class="text-xs font-normal text-gray-400">Unit: $ Billion</span>
                         </h3>
 
                         <div class="relative flex-1 border-l border-white/10 ml-8 mb-8">
-                            <!-- Zero Line at 60% from top (40% from bottom) -->
+                            <!-- Zero Line at 60% from top (40% from bottom)-->
                             <div class="absolute top-[60%] left-0 right-0 border-t border-white/30 border-dashed z-0">
                             </div>
 
@@ -2149,39 +2182,46 @@
                 </div>
 
                 <!-- Strengths -->
-                <div class="glass p-6 rounded-2xl border-t-4 border-blue-500 hover:bg-blue-900/10 transition">
-                    <h3 class="text-xl font-bold text-blue-400 mb-4">Strengths</h3>
-                    <ul class="text-sm text-gray-300 space-y-2 list-disc pl-4">
-                        <li>100-Year Brand Power</li>
-                        <li>Unrivaled IP Portfolio (Marvel, Star Wars)</li>
-                        <li>Diversified Revenue (Park + Media)</li>
+                <div
+                    class="glass p-6 rounded-2xl border-t-4 border-blue-500 hover:bg-blue-900/10 transition overflow-y-auto">
+                    <h3 class="text-xl font-bold text-blue-400 mb-4">Strengths (강점)</h3>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc pl-4">
+                        <li><strong class="text-white">강력한 브랜드 파워:</strong> 100년 이상의 역사와 글로벌 인지도</li>
+                        <li><strong class="text-white">독보적 IP 포트폴리오:</strong> Marvel, Star Wars, Pixar 등 압도적 콘텐츠 경쟁력
+                        </li>
+                        <li><strong class="text-white">다각화된 수익 구조:</strong> 파크, 미디어, 스트리밍, 소비재의 리스크 분산 효과</li>
+                        <li><strong class="text-white">재무 건전성 회복:</strong> 최근 스트리밍 포함 사업 구조 재정비 성과</li>
                     </ul>
                 </div>
                 <!-- Weaknesses -->
-                <div class="glass p-6 rounded-2xl border-t-4 border-red-500 hover:bg-red-900/10 transition">
-                    <h3 class="text-xl font-bold text-red-400 mb-4">Weaknesses</h3>
-                    <ul class="text-sm text-gray-300 space-y-2 list-disc pl-4">
-                        <li>High Operating Costs</li>
-                        <li>Streaming Deficit ($5.8B+)</li>
-                        <li>China Market Dependency</li>
+                <div
+                    class="glass p-6 rounded-2xl border-t-4 border-red-500 hover:bg-red-900/10 transition overflow-y-auto">
+                    <h3 class="text-xl font-bold text-red-400 mb-4">Weaknesses (약점)</h3>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc pl-4">
+                        <li><strong class="text-white">높은 고정 비용:</strong> 콘텐츠 제작 및 유지에 따른 막대한 운영비 부담</li>
+                        <li><strong class="text-white">과거 스트리밍 적자:</strong> 장기 투자로 인한 손실 구조 경험 (Deficit)</li>
+                        <li><strong class="text-white">경기 민감성:</strong> 소비자 지출 의존도가 높아 경기 침체 시 타격 가능성</li>
                     </ul>
                 </div>
                 <!-- Opportunities -->
-                <div class="glass p-6 rounded-2xl border-t-4 border-green-500 hover:bg-green-900/10 transition">
-                    <h3 class="text-xl font-bold text-green-400 mb-4">Opportunities</h3>
-                    <ul class="text-sm text-gray-300 space-y-2 list-disc pl-4">
-                        <li>Emerging Markets (India, SEA)</li>
-                        <li>Metaverse & AI Content</li>
-                        <li>New IP Development</li>
+                <div
+                    class="glass p-6 rounded-2xl border-t-4 border-green-500 hover:bg-green-900/10 transition overflow-y-auto">
+                    <h3 class="text-xl font-bold text-green-400 mb-4">Opportunities (기회)</h3>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc pl-4">
+                        <li><strong class="text-white">신흥 시장 성장:</strong> 아시아, 인도 등 중산층 증가에 따른 수요 확대</li>
+                        <li><strong class="text-white">신기술 융합:</strong> 메타버스, AI, XR을 활용한 온/오프라인 경험 혁신</li>
+                        <li><strong class="text-white">IP 확장 & 시너지:</strong> 신규 프랜차이즈 개발 및 전 사업 영역 통합 마케팅</li>
                     </ul>
                 </div>
                 <!-- Threats -->
-                <div class="glass p-6 rounded-2xl border-t-4 border-orange-500 hover:bg-orange-900/10 transition">
-                    <h3 class="text-xl font-bold text-orange-400 mb-4">Threats</h3>
-                    <ul class="text-sm text-gray-300 space-y-2 list-disc pl-4">
-                        <li>Streaming Competition (Netflix)</li>
-                        <li>Economic Recession</li>
-                        <li>Geopolitical Risks</li>
+                <div
+                    class="glass p-6 rounded-2xl border-t-4 border-orange-500 hover:bg-orange-900/10 transition overflow-y-auto">
+                    <h3 class="text-xl font-bold text-orange-400 mb-4">Threats (위협)</h3>
+                    <ul class="text-xs text-gray-300 space-y-2 list-disc pl-4">
+                        <li><strong class="text-white">치열한 경쟁:</strong> Netflix 등 OTT 및 콘텐츠 시장 과열 (Red Ocean)</li>
+                        <li><strong class="text-white">거시 경제 불확실성:</strong> 경기 침체로 인한 엔터/여행 수요 감소 우려</li>
+                        <li><strong class="text-white">트렌드 변화:</strong> 숏폼, UGC 등 새로운 콘텐츠 소비 패턴 부상</li>
+                        <li><strong class="text-white">규제 리스크:</strong> 글로벌 미디어 반독점 및 각국 규제 강화</li>
                     </ul>
                 </div>
             </div>
@@ -2310,8 +2350,9 @@
                     <div class="text-4xl font-black text-blue-500/20">01</div>
                     <div>
                         <i class="fa-solid fa-circle-nodes text-3xl text-blue-400 mb-4"></i>
-                        <h3 class="font-bold text-white mb-2">IP Ecosystem</h3>
-                        <p class="text-xs text-gray-400">One IP, Multi-Platform. 10x Revenue Multiplier.</p>
+                        <h3 class="font-bold text-white mb-2">IP 생태계<br><span class="text-xs text-blue-300">(IP
+                                Ecosystem)</span></h3>
+                        <p class="text-xs text-gray-400">하나의 IP를 다양한 플랫폼에서 활용<br>→ 10배의 수익 배가 효과</p>
                     </div>
                 </div>
                 <!-- Card 2 -->
@@ -2320,8 +2361,9 @@
                     <div class="text-4xl font-black text-red-500/20">02</div>
                     <div>
                         <i class="fa-solid fa-handshake text-3xl text-red-400 mb-4"></i>
-                        <h3 class="font-bold text-white mb-2">Strategic M&A</h3>
-                        <p class="text-xs text-gray-400">$87B Investment created $200B+ Value.</p>
+                        <h3 class="font-bold text-white mb-2">전략적 M&A<br><span class="text-xs text-red-300">(Strategic
+                                M&A)</span></h3>
+                        <p class="text-xs text-gray-400">870억 달러의 투자로<br>2,000억 달러 이상의 가치 창출</p>
                     </div>
                 </div>
                 <!-- Card 3 -->
@@ -2330,8 +2372,9 @@
                     <div class="text-4xl font-black text-yellow-500/20">03</div>
                     <div>
                         <i class="fa-solid fa-scale-balanced text-3xl text-yellow-400 mb-4"></i>
-                        <h3 class="font-bold text-white mb-2">Glocal Balance</h3>
-                        <p class="text-xs text-gray-400">Think Global, Act Local. (Shanghai Case)</p>
+                        <h3 class="font-bold text-white mb-2">글로컬 밸런스<br><span class="text-xs text-yellow-300">(Glocal
+                                Balance)</span></h3>
+                        <p class="text-xs text-gray-400">글로벌 기준 유지 + 현지 맞춤 실행<br>("Think Global, Act Local.")</p>
                     </div>
                 </div>
                 <!-- Card 4 -->
@@ -2340,8 +2383,9 @@
                     <div class="text-4xl font-black text-purple-500/20">04</div>
                     <div>
                         <i class="fa-solid fa-rocket text-3xl text-purple-400 mb-4"></i>
-                        <h3 class="font-bold text-white mb-2">Digital Shift</h3>
-                        <p class="text-xs text-gray-400">Bold transition from legacy to streaming.</p>
+                        <h3 class="font-bold text-white mb-2">디지털 전환<br><span class="text-xs text-purple-300">(Digital
+                                Shift)</span></h3>
+                        <p class="text-xs text-gray-400">전통 비즈니스 모델에서<br>과감하게 스트리밍 중심으로 전환</p>
                     </div>
                 </div>
                 <!-- Card 5 -->
@@ -2350,14 +2394,15 @@
                     <div class="text-4xl font-black text-green-500/20">05</div>
                     <div>
                         <i class="fa-solid fa-clock text-3xl text-green-400 mb-4"></i>
-                        <h3 class="font-bold text-white mb-2">Patience</h3>
-                        <p class="text-xs text-gray-400">Long-term vision over short-term gain.</p>
+                        <h3 class="font-bold text-white mb-2">인내와 장기 전략<br><span
+                                class="text-xs text-green-300">(Patience)</span></h3>
+                        <p class="text-xs text-gray-400">단기 이익보다 장기적 비전을 우선<br>브랜드 가치 보존</p>
                     </div>
                 </div>
             </div>
 
             <div class="mt-8 text-center glass p-6 rounded-full border border-white/10">
-                <p class="text-xl font-serif text-white italic">"Strategic Patience & Flexibility is the Key"</p>
+                <p class="text-xl font-serif text-white italic">"전략적 인내와 유연성이 핵심이다."</p>
             </div>
         </div>
     </div>
@@ -2367,8 +2412,8 @@
         <div class="h-full flex flex-col p-12">
             <div class="flex justify-between items-end mb-8">
                 <div>
-                    <p class="text-green-400 font-serif italic mb-2">For Global Companies</p>
-                    <h2 class="text-5xl font-bold text-white">Strategic Implications</h2>
+                    <p class="text-green-400 font-serif italic mb-2">Strategic Implications</p>
+                    <h2 class="text-5xl font-bold text-white">글로벌 기업을 위한 시사점</h2>
                 </div>
                 <div class="text-6xl font-black text-white/5 font-oswald">21</div>
             </div>
@@ -2378,43 +2423,44 @@
                 <!-- Box 1: IP Asset -->
                 <div class="glass p-6 rounded-2xl border-l-4 border-blue-500">
                     <i class="fa-solid fa-gem text-2xl text-blue-400 mb-3"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">IP as Core Asset</h3>
-                    <p class="text-sm text-gray-300">Intangible assets are the new gold. Invest in creative talent &
-                        protection.</p>
+                    <h3 class="text-xl font-bold text-white mb-2">IP as Core Asset<br><span
+                            class="text-sm font-normal text-gray-300">IP를 핵심 자산으로</span></h3>
+                    <p class="text-sm text-gray-300">무형 자산이야말로 새로운 황금이다.<br>창의적 인재 투자 및 보호.</p>
                 </div>
                 <!-- Box 2: Ecosystem -->
                 <div class="glass p-6 rounded-2xl border-l-4 border-purple-500">
                     <i class="fa-solid fa-network-wired text-2xl text-purple-400 mb-3"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Integrated Model</h3>
-                    <p class="text-sm text-gray-300">Move from single product to ecosystem. Cross-platform synergy
-                        is mandatory.</p>
+                    <h3 class="text-xl font-bold text-white mb-2">Integrated Model<br><span
+                            class="text-sm font-normal text-gray-300">통합된 모델</span></h3>
+                    <p class="text-sm text-gray-300">단일 제품이 아닌 생태계 중심.<br>플랫폼 간 시너지 필수.</p>
                 </div>
                 <!-- Box 3: Culture -->
                 <div class="glass p-6 rounded-2xl border-l-4 border-yellow-500">
                     <i class="fa-solid fa-earth-asia text-2xl text-yellow-400 mb-3"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Cultural Sensitivity</h3>
-                    <p class="text-sm text-gray-300">Respect local markets. Use local partners and insights.</p>
+                    <h3 class="text-xl font-bold text-white mb-2">Cultural Sensitivity<br><span
+                            class="text-sm font-normal text-gray-300">문화적 민감성</span></h3>
+                    <p class="text-sm text-gray-300">현지 시장을 존중하라.<br>현지 파트너와 통찰 활용.</p>
                 </div>
                 <!-- Box 4: Digital -->
                 <div class="glass p-6 rounded-2xl border-l-4 border-red-500">
                     <i class="fa-solid fa-laptop-code text-2xl text-red-400 mb-3"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Digital First</h3>
-                    <p class="text-sm text-gray-300">Cannibalize yourself before others do. Own the customer data.
-                    </p>
+                    <h3 class="text-xl font-bold text-white mb-2">Digital First<br><span
+                            class="text-sm font-normal text-gray-300">디지털 퍼스트</span></h3>
+                    <p class="text-sm text-gray-300">잠식 당하기 전에 혁신하라.<br>고객 데이터의 주체가 되라.</p>
                 </div>
                 <!-- Box 5: Entry Mode -->
                 <div class="glass p-6 rounded-2xl border-l-4 border-green-500">
                     <i class="fa-solid fa-door-open text-2xl text-green-400 mb-3"></i>
-                    <h3 class="text-xl font-bold text-white mb-2">Flexible Entry</h3>
-                    <p class="text-sm text-gray-300">One size doesn't fit all. Balance risk and control dynamically.
-                    </p>
+                    <h3 class="text-xl font-bold text-white mb-2">Flexible Entry<br><span
+                            class="text-sm font-normal text-gray-300">유연한 진입</span></h3>
+                    <p class="text-sm text-gray-300">모든 시장에 동일 전략은 없다.<br>위험과 통제의 균형 조절.</p>
                 </div>
                 <!-- Summary Box -->
                 <div
                     class="glass p-6 rounded-2xl bg-gradient-to-br from-white/10 to-transparent flex items-center justify-center text-center">
                     <div>
-                        <h3 class="text-lg font-bold text-white mb-1">Success Formula</h3>
-                        <p class="text-xs text-gray-400">Clarity × Execution × Patience × Innovation</p>
+                        <h3 class="text-lg font-bold text-white mb-1">Success Formula (성공 공식)</h3>
+                        <p class="text-xs text-gray-400">명확한 비전 × 실행력 × 인내 × 혁신</p>
                     </div>
                 </div>
             </div>
@@ -2426,8 +2472,8 @@
         <div class="h-full flex flex-col p-12">
             <div class="flex justify-between items-end mb-8">
                 <div>
-                    <p class="text-purple-400 font-serif italic mb-2">For Korean Industries</p>
-                    <h2 class="text-5xl font-bold text-white">Lessons for Korea</h2>
+                    <p class="text-purple-400 font-serif italic mb-2">Lessons for Korea</p>
+                    <h2 class="text-5xl font-bold text-white">한국 산업을 위한 시사점</h2>
                 </div>
                 <div class="text-6xl font-black text-white/5 font-oswald">22</div>
             </div>
@@ -2443,11 +2489,11 @@
                     <p class="text-xs text-purple-300 mb-6">CJ ENM, HYBE</p>
                     <ul class="text-sm text-gray-300 space-y-4">
                         <li><i class="fa-solid fa-check text-purple-500 mr-2"></i><strong>IP
-                                Diversification:</strong> Music → Game → Goods (Like BTS)</li>
-                        <li><i class="fa-solid fa-check text-purple-500 mr-2"></i><strong>Global Platform:</strong>
-                            Build own platforms (Weverse)</li>
-                        <li><i class="fa-solid fa-check text-purple-500 mr-2"></i><strong>Long-term View:</strong>
-                            Extend IP lifecycle beyond trends</li>
+                                Diversification:</strong><br>음악 → 게임, 굿즈, 공연 등으로 확장</li>
+                        <li><i class="fa-solid fa-check text-purple-500 mr-2"></i><strong>Global
+                                Platform:</strong><br>단순 수출 넘어서 자체 플랫폼 구축 (Weverse)</li>
+                        <li><i class="fa-solid fa-check text-purple-500 mr-2"></i><strong>Long-term
+                                View:</strong><br>유행을 넘어 긴 생애주기 전략</li>
                     </ul>
                 </div>
 
@@ -2457,15 +2503,15 @@
                         class="w-16 h-16 rounded-full bg-blue-500/20 flex items-center justify-center text-3xl text-blue-400 mb-6">
                         <i class="fa-solid fa-car"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Manufacturing</h3>
+                    <h3 class="text-2xl font-bold text-white mb-2">Manufacturing / Tech</h3>
                     <p class="text-xs text-blue-300 mb-6">Samsung, Hyundai</p>
                     <ul class="text-sm text-gray-300 space-y-4">
                         <li><i class="fa-solid fa-check text-blue-500 mr-2"></i><strong>Product to
-                                Experience:</strong> Sell the lifestyle, not just specs</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i><strong>Storytelling:</strong> Tech
-                            needs emotion (Brand Universe)</li>
-                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i><strong>Fandom:</strong> Create
-                            loyal fans like Disney</li>
+                                Experience:</strong><br>제품 스펙이 아닌 '라이프스타일' 판매</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i><strong>Storytelling:</strong><br>기술 기업도
+                            '감성 스토리'와 세계관 필요</li>
+                        <li><i class="fa-solid fa-check text-blue-500 mr-2"></i><strong>Fandom Build:</strong><br>충성 팬덤
+                            양성 (Like Disney)</li>
                     </ul>
                 </div>
 
@@ -2475,15 +2521,15 @@
                         class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center text-3xl text-green-400 mb-6">
                         <i class="fa-solid fa-ticket"></i>
                     </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Tourism</h3>
+                    <h3 class="text-2xl font-bold text-white mb-2">Tourism / Resort</h3>
                     <p class="text-xs text-green-300 mb-6">Lotte, Everland</p>
                     <ul class="text-sm text-gray-300 space-y-4">
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Global IP:</strong> Develop
-                            characters beyond local market</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Tech Fusion:</strong> Mix
-                            K-Culture with VR/AR</li>
-                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Patience:</strong>
-                            Long-term investment for expansion</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Global IP:</strong><br>내수용을 넘어
+                            세계 통용 캐릭터 개발</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Tech Fusion:</strong><br>VR/AR,
+                            메타버스와 K-Culture 융합</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i><strong>Patience:</strong><br>단기 이익 대신
+                            장기적 투자와 육성</li>
                     </ul>
                 </div>
             </div>
